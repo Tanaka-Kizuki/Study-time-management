@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStudyTable extends Migration
+class CreateStudysTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class CreateStudyTable extends Migration
      */
     public function up()
     {
-        Schema::create('study', function (Blueprint $table) {
-            $table->id();
+        Schema::create('studys', function (Blueprint $table) {
+            $table->increments('id');
+            $table->dateTime('start');
+            $table->dateTime('finish')->nullable();
+            $table->dateTime('totaltime')->nullable();
+            $table->dateTime('today')->nullable();
             $table->timestamps();
         });
     }

@@ -18,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/','StudyController@index');
+Route::get('/start','StudyController@start');
