@@ -13,12 +13,12 @@ class CreateStudysTable extends Migration
      */
     public function up()
     {
-        Schema::create('studys', function (Blueprint $table) {
+        Schema::create('studies', function (Blueprint $table) {
             $table->increments('id');
             $table->dateTime('start');
             $table->dateTime('finish')->nullable();
-            $table->dateTime('totaltime')->nullable();
-            $table->dateTime('today')->nullable();
+            $table->integer('totaltime')->nullable();
+            $table->text('today')->nullable();
             $table->timestamps();
         });
     }

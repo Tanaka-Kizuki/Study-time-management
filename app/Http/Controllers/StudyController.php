@@ -33,12 +33,22 @@ class StudyController extends Controller
 
     public function finish() {
         $oldstudy = Study::orderBy('id','desc')->first();
+        $date = Carbon::now();
+        $day = $date ->format('Y年m月d日');
+
         if($oldstudy) {
             if($oldstudy->finish) {
                 return redirect()->back();
             } elseif($oldstudy->start) {
+                $start = new Carbon($oldstudy->start);
+                $finish = Carbon::now();
+                $todalTime = $start->diffInMinutes($finish);
+                $totalTimeHours = ceil($todalTime / 15) * 0.25;
+
                 $oldstudy->update([
-                    'finish' => Carbon::now(),
+                    'finish' => $finish,
+                    'totaltime' => $totalTimeHours,
+                    'day' => $day,
                 ]);
                 return redirect()->back();
             }
