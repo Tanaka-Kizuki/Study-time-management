@@ -9,7 +9,8 @@ use App\Study;
 class StudyController extends Controller
 {
     public function index() {
-        return view('index');
+        $params = Study::all();
+        return view('index',['params' => $params]);
     }
 
     public function start() {

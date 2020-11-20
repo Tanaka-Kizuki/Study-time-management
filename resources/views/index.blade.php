@@ -14,7 +14,13 @@
           <div class="content">
                <a href="/start">Let's Study</a>
                <a href="/finish">Finish Study</a>
-          </div>    
+          </div>
+          <div class="box">
+               @foreach($params as $param)
+               <p>{{$param->today}}</p>
+               <p>{{$param->totaltime}}</p>
+               @endforeach
+          </div> 
      </div>
 </body>
 </html>
