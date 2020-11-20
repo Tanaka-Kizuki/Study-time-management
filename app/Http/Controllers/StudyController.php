@@ -14,8 +14,6 @@ class StudyController extends Controller
 
     public function start() {
         $oldstudy = Study::orderBy('id','desc')->first();
-        var_dump($oldstudy->start);
-        exit;
         if($oldstudy) {
             if($oldstudy->finish) {
                 $study = Study::create([
@@ -29,6 +27,22 @@ class StudyController extends Controller
             $study = Study::create([
                 'start' => Carbon::now(),
             ]);
+            return redirect()->back();
+        }
+    }
+
+    public function finish() {
+        $oldstudy = Study::orderBy('id','desc')->first();
+        if($oldstudy) {
+            if($oldstudy->finish) {
+                return redirect()->back();
+            } elseif($oldstudy->start) {
+                $oldstudy->update([
+                    'finish' => Carbon::now(),
+                ]);
+                return redirect()->back();
+            }
+        } else {
             return redirect()->back();
         }
     }
