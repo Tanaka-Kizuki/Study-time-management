@@ -14,7 +14,7 @@
           <div class="content">
                <a href="/start">Let's Study</a>
                <a href="/finish">Finish Study</a>
-          </div>          
+          </div>    
      </div>
 </body>
 </html>

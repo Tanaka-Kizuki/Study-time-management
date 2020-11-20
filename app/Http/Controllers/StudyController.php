@@ -48,7 +48,7 @@ class StudyController extends Controller
                 $oldstudy->update([
                     'finish' => $finish,
                     'totaltime' => $totalTimeHours,
-                    'day' => $day,
+                    'today' => $day,
                 ]);
                 return redirect()->back();
             }
