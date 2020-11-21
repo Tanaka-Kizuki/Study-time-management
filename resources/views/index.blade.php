@@ -5,6 +5,8 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Document</title>
      <link rel="stylesheet" href="{{ asset('/css/index.css')}}">
+     <!-- <link href="{{ mix('/css/app.css') }}" rel="stylesheet" type="text/css">
+    <meta name="csrf-token" content="{{csrf_token()}}"> -->
 </head>
 <body>
      <div class="container">
@@ -20,7 +22,9 @@
                <p>{{$param->today}}</p>
                <p>{{$param->totaltime}}</p>
                @endforeach
-          </div> 
+          </div>
      </div>
+     <!-- <script src="{{ mix('/js/app.js') }}"></script> -->
+
 </body>
 </html>

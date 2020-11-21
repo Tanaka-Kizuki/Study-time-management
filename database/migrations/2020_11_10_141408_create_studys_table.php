@@ -19,7 +19,7 @@ class CreateStudysTable extends Migration
             $table->dateTime('finish')->nullable();
             $table->integer('totaltime')->nullable();
             $table->text('today')->nullable();
-            
+            $table->text('status')->nullable();
             $table->timestamps();
         });
     }
