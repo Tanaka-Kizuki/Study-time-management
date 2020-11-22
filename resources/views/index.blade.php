@@ -21,17 +21,21 @@
                </form>
                <a href="/finish">Finish Study</a>
           </div>
-          <div class="box">
-               @foreach($params as $param)
-               <p>{{$user->find($param->user_id)->name}}</p>
-               <p>{{$param->subject}}</p>
-               <p>{{$param->time_start}}</p>
-               <p>{{$param->time_finish}}</p>
-               @if($param->totaltime || $param->totaltime==0)
-               <p>{{$param->totaltime}}時間</p>
-               @endif
-               <p>{{$param->status}}</p>
-               @endforeach
+          <div class="fusen" style="padding-left: 60px;">
+               <ul>
+                    @foreach($params as $param)
+                    <li>
+                         <p>{{$user->find($param->user_id)->name}}</p>
+                         <p>{{$param->subject}}</p>
+                         <p>{{$param->time_start}}</p>
+                         <p>{{$param->time_finish}}</p>
+                         @if($param->totaltime || $param->totaltime==0)
+                         <p>{{$param->totaltime}}時間</p>
+                         @endif
+                         <p>{{$param->status}}</p>
+                    </li>
+                    @endforeach
+               </ul>
           </div>
      </div>
      <!-- <script src="{{ mix('/js/app.js') }}"></script> -->
