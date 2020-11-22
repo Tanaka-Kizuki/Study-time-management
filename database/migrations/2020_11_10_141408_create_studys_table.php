@@ -15,12 +15,15 @@ class CreateStudysTable extends Migration
     {
         Schema::create('studies', function (Blueprint $table) {
             $table->increments('id');
+            $table->text('subject')->nullable();
             $table->dateTime('start');
+            $table->text('time_start');
             $table->dateTime('finish')->nullable();
+            $table->text('time_finish')->nullable();
+            $table->text('memo')->nullable();
             $table->integer('totaltime')->nullable();
             $table->text('today')->nullable();
             $table->text('status')->nullable();
-            $table->text('subject')->nullable();
             $table->timestamps();
         });
     }

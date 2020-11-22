@@ -16,13 +16,13 @@ class StudyController extends Controller
 
     public function start(Request $request) {
         $oldstudy = Study::orderBy('id','desc')->first();
-        $date = Carbon::now();
-        $day = $date ->format('Y年m月d日');
-        
+        $start = Carbon::now();
+        $day = $start ->format('Y年m月d日');
         if($oldstudy) {
             if($oldstudy->finish) {
                 $study = Study::create([
-                    'start' => Carbon::now(),
+                    'start' => $start,
+                    'time_start'=> $start->format('h時i分'),
                     'status' => '勉強中',
                     'today' => $day,
                     'subject' => $request->subject
@@ -33,7 +33,8 @@ class StudyController extends Controller
             }
         } else {
             $study = Study::create([
-                'start' => Carbon::now(),
+                'start' => $start,
+                'time_start'=> $start->format('h時i分'),
                 'status' => '勉強中',
                 'today' => $day,
                 'subject' => $request->subject,
@@ -44,18 +45,18 @@ class StudyController extends Controller
 
     public function finish() {
         $oldstudy = Study::orderBy('id','desc')->first();
+        $start = new Carbon($oldstudy->start);
+        $finish = Carbon::now();
+        $todalTime = $start->diffInMinutes($finish);
+        $totalTimeHours = ceil($todalTime / 15) * 0.25;
 
         if($oldstudy) {
             if($oldstudy->finish) {
                 return redirect()->back();
             } elseif($oldstudy->start) {
-                $start = new Carbon($oldstudy->start);
-                $finish = Carbon::now();
-                $todalTime = $start->diffInMinutes($finish);
-                $totalTimeHours = ceil($todalTime / 15) * 0.25;
-
                 $oldstudy->update([
                     'finish' => $finish,
+                    'time_finish'=> $finish->format('h時i分'),
                     'totaltime' => $totalTimeHours,
                     'status' => '勉強終了!!!'
                 ]);

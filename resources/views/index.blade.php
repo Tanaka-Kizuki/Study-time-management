@@ -23,10 +23,14 @@
           </div>
           <div class="box">
                @foreach($params as $param)
-               <p>{{$param->today}}</p>
-               <p>{{$param->totaltime}}</p>
-               <p>{{$param->status}}</p>
                <p>{{$param->subject}}</p>
+               <p>{{$param->today}}</p>
+               <p>{{$param->time_start}}</p>
+               <p>{{$param->time_finish}}</p>
+               @if($param->totaltime)
+               <p>{{$param->totaltime}}時間</p>
+               @endif
+               <p>{{$param->status}}</p>
                @endforeach
           </div>
      </div>
