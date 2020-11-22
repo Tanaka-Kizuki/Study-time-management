@@ -9,16 +9,22 @@ use App\Study;
 class StudyController extends Controller
 {
     public function index() {
+
         $params = Study::all();
         return view('index',['params' => $params]);
     }
 
     public function start() {
         $oldstudy = Study::orderBy('id','desc')->first();
+        $date = Carbon::now();
+        $day = $date ->format('Y年m月d日');
+
         if($oldstudy) {
             if($oldstudy->finish) {
                 $study = Study::create([
                     'start' => Carbon::now(),
+                    'status' => '勉強中',
+                    'today' => $day,
                 ]);
                 return redirect()->back();
             } else {
@@ -27,6 +33,7 @@ class StudyController extends Controller
         } else {
             $study = Study::create([
                 'start' => Carbon::now(),
+                'status' => '勉強中'
             ]);
             return redirect()->back();
         }
@@ -34,8 +41,6 @@ class StudyController extends Controller
 
     public function finish() {
         $oldstudy = Study::orderBy('id','desc')->first();
-        $date = Carbon::now();
-        $day = $date ->format('Y年m月d日');
 
         if($oldstudy) {
             if($oldstudy->finish) {
@@ -49,7 +54,7 @@ class StudyController extends Controller
                 $oldstudy->update([
                     'finish' => $finish,
                     'totaltime' => $totalTimeHours,
-                    'today' => $day,
+                    'status' => '勉強終了!!!'
                 ]);
                 return redirect()->back();
             }

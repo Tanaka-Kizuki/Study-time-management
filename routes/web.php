@@ -20,3 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','StudyController@index');
 Route::get('/start','StudyController@start');
 Route::get('/finish','StudyController@finish');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -21,6 +21,7 @@
                @foreach($params as $param)
                <p>{{$param->today}}</p>
                <p>{{$param->totaltime}}</p>
+               <p>{{$param->status}}</p>
                @endforeach
           </div>
      </div>
