@@ -5,24 +5,28 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Study;
+use Auth;
 
 class StudyController extends Controller
 {
     public function index() {
-
+        $user = Auth::user();
         $params = Study::all();
-        return view('index',['params' => $params]);
+        return view('index',['params' => $params,'user' => $user]);
     }
 
     public function start(Request $request) {
         $oldstudy = Study::orderBy('id','desc')->first();
         $start = Carbon::now();
         $day = $start ->format('Y年m月d日');
+        // var_dump(Auth::id());
+        // exit();
         if($oldstudy) {
             if($oldstudy->finish) {
                 $study = Study::create([
+                    'user_id' => Auth::id(),
                     'start' => $start,
-                    'time_start'=> $start->format('h時i分'),
+                    'time_start'=> $start->format('H時i分'),
                     'status' => '勉強中',
                     'today' => $day,
                     'subject' => $request->subject
@@ -33,8 +37,9 @@ class StudyController extends Controller
             }
         } else {
             $study = Study::create([
+                'user_id' => Auth::id(),
                 'start' => $start,
-                'time_start'=> $start->format('h時i分'),
+                'time_start'=> $start->format('H時i分'),
                 'status' => '勉強中',
                 'today' => $day,
                 'subject' => $request->subject,
@@ -56,7 +61,7 @@ class StudyController extends Controller
             } elseif($oldstudy->start) {
                 $oldstudy->update([
                     'finish' => $finish,
-                    'time_finish'=> $finish->format('h時i分'),
+                    'time_finish'=> $finish->format('H時i分'),
                     'totaltime' => $totalTimeHours,
                     'status' => '勉強終了!!!'
                 ]);
