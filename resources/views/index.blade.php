@@ -14,7 +14,11 @@
                <img class="logo" src="{{ asset('/img/logo.svg') }}" alt="logo">
           </div>
           <div class="content">
-               <a href="/start">Let's Study</a>
+               <form action="/start">
+               @csrf
+                    <input type="text" name="subject">
+                    <button>Let's Study</button>
+               </form>
                <a href="/finish">Finish Study</a>
           </div>
           <div class="box">
@@ -22,6 +26,7 @@
                <p>{{$param->today}}</p>
                <p>{{$param->totaltime}}</p>
                <p>{{$param->status}}</p>
+               <p>{{$param->subject}}</p>
                @endforeach
           </div>
      </div>

@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Study extends Model
 {
     protected $fillable = [
-        'start', 'finish', 'totaltime','today','status'
+        'start', 'finish', 'totaltime','today','status','subject'
     ];
 }

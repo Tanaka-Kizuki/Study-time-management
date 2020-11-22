@@ -14,17 +14,18 @@ class StudyController extends Controller
         return view('index',['params' => $params]);
     }
 
-    public function start() {
+    public function start(Request $request) {
         $oldstudy = Study::orderBy('id','desc')->first();
         $date = Carbon::now();
         $day = $date ->format('Y年m月d日');
-
+        
         if($oldstudy) {
             if($oldstudy->finish) {
                 $study = Study::create([
                     'start' => Carbon::now(),
                     'status' => '勉強中',
                     'today' => $day,
+                    'subject' => $request->subject
                 ]);
                 return redirect()->back();
             } else {
@@ -33,7 +34,9 @@ class StudyController extends Controller
         } else {
             $study = Study::create([
                 'start' => Carbon::now(),
-                'status' => '勉強中'
+                'status' => '勉強中',
+                'today' => $day,
+                'subject' => $request->subject,
             ]);
             return redirect()->back();
         }
