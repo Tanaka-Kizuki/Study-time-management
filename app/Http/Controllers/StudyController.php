@@ -15,6 +15,10 @@ class StudyController extends Controller
         return view('index',['params' => $params,'user' => $user]);
     }
 
+    public function record() {
+        return view('record');
+    }
+
     public function start(Request $request) {
         $oldstudy = Study::orderBy('id','desc')->first();
         $start = Carbon::now();
