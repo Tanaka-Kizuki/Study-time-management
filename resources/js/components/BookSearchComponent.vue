@@ -2,7 +2,7 @@
      <div class="book">
           <input type="text" v-model="isbn">
           <button v-on:click="search">検索</button>
-          <form action="/book">
+          <form action="/book/record">
                <img v-bind:src="cover">
                <p>{{title}}</p>
                <input type="hidden" name="cover" v-bind:value="cover">

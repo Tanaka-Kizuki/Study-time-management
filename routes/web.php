@@ -21,8 +21,8 @@ Route::get('/','StudyController@index');
 Route::get('/start','StudyController@start');
 Route::get('/finish','StudyController@finish');
 
-Route::get('/record','StudyController@record');
-Route::get('/book','StudyController@book');
+Route::get('/book','StudyController@record');
+Route::get('/book/record','StudyController@book');
 
 Auth::routes();
 

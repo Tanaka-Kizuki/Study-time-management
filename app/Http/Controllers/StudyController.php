@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Study;
+use App\Book;
 use Auth;
 
 class StudyController extends Controller
@@ -16,12 +17,16 @@ class StudyController extends Controller
     }
 
     public function record() {
-        return view('record');
+        $books = Book::all();
+        return view('book',['books'=>$books]);
     }
 
     public function book(Request $request) {
-        var_dump($request->title);
-        exit();
+        $book = Book::create([
+            'title' => $request->title,
+            'image' => $request->cover
+        ]);
+        return redirect('/book');
     }
 
     public function start(Request $request) {

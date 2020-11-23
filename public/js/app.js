@@ -38237,7 +38237,7 @@ var render = function() {
     _vm._v(" "),
     _c("button", { on: { click: _vm.search } }, [_vm._v("検索")]),
     _vm._v(" "),
-    _c("form", { attrs: { action: "/book" } }, [
+    _c("form", { attrs: { action: "/book/record" } }, [
       _c("img", { attrs: { src: _vm.cover } }),
       _vm._v(" "),
       _c("p", [_vm._v(_vm._s(_vm.title))]),
