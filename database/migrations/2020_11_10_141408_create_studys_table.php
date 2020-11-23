@@ -15,6 +15,7 @@ class CreateStudysTable extends Migration
     {
         Schema::create('studies', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('book_id');
             $table->integer('user_id');
             $table->text('subject')->nullable();
             $table->dateTime('start');
