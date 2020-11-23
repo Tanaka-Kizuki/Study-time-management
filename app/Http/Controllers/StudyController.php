@@ -19,6 +19,11 @@ class StudyController extends Controller
         return view('record');
     }
 
+    public function book(Request $request) {
+        var_dump($request->title);
+        exit();
+    }
+
     public function start(Request $request) {
         $oldstudy = Study::orderBy('id','desc')->first();
         $start = Carbon::now();

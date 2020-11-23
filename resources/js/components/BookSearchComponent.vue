@@ -1,7 +1,14 @@
 <template>
      <div class="book">
-          <h1>a</h1>
-          <img v-bind:src="cover">
+          <input type="text" v-model="isbn">
+          <button v-on:click="search">検索</button>
+          <form action="/book">
+               <img v-bind:src="cover">
+               <p>{{title}}</p>
+               <input type="hidden" name="cover" v-bind:value="cover">
+               <input type="hidden" name="title" v-bind:value="title">
+               <button>登録</button>
+          </form>
      </div>
 </template>
 
@@ -10,17 +17,26 @@ export default {
 
      data() {
           return {
+              isbn:'',
               title:'',
               cover:'',
           }
      },
-     created() {
-               const url = "https://api.openbd.jp/v1/get?isbn=" + "978-4-7741-8967-3";
+     methods: {
+          search: function() {
+               const url = "https://api.openbd.jp/v1/get?isbn=" + this.isbn;
                axios.get(url)
                .then((res) => {
                this.title = res.data[0].summary.title;
                this.cover = res.data[0].summary.cover;
                })
+          }
      }
 }
 </script>
+
+<style>
+     .book {
+          text-align: center;
+     }
+</style>

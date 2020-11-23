@@ -22,6 +22,7 @@ Route::get('/start','StudyController@start');
 Route::get('/finish','StudyController@finish');
 
 Route::get('/record','StudyController@record');
+Route::get('/book','StudyController@book');
 
 Auth::routes();
 

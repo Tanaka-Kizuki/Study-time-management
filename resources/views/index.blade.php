@@ -13,6 +13,15 @@
           <div class="logo">
                <img class="logo" src="{{ asset('/img/logo.svg') }}" alt="logo">
           </div>
+          <div class="form">
+               <form action="/start">
+               @csrf
+                    <input type="text" name="subject">
+                    <button>Let's Study</button>
+               </form>
+               <a href="/finish">Finish Study</a>
+          </div>
+          
           <a href="/record">記録する</a>
           <div class="fusen">
                <ul>
