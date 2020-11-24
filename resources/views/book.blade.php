@@ -9,6 +9,11 @@
      <meta name="csrf-token" content="{{csrf_token()}}">
 </head>
 <body>
+     <h1>書籍登録</h1>
+     <div id="app">
+        <booksearch-component></booksearch-component>
+     </div>
+     <h1>登録書籍</h1>
      <div class="books">
           @foreach($books as $book)
           <div class="item">
@@ -17,9 +22,6 @@
           </div>
           @endforeach
      </div>
-     <div id="app">
-        <booksearch-component></booksearch-component>
-    </div>
     <script src="{{ mix('js/app.js') }}" defer></script>
 </body>
 </html>

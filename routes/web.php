@@ -17,12 +17,17 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+//ホーム
 Route::get('/','StudyController@index');
+
+//学習登録画面
+Route::get('/record','StudyController@record');
 Route::get('/start','StudyController@start');
 Route::get('/finish','StudyController@finish');
 
-Route::get('/book','StudyController@record');
-Route::get('/book/record','StudyController@book');
+//書籍登録画面
+Route::get('/book','StudyController@book');
+Route::get('/book/record','StudyController@bookadd');
 
 Auth::routes();
 

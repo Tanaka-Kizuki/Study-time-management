@@ -18,15 +18,7 @@ class StudyController extends Controller
 
     public function record() {
         $books = Book::all();
-        return view('book',['books'=>$books]);
-    }
-
-    public function book(Request $request) {
-        $book = Book::create([
-            'title' => $request->title,
-            'image' => $request->cover
-        ]);
-        return redirect('/book');
+        return view('record',['books' => $books]);
     }
 
     public function start(Request $request) {
@@ -84,5 +76,18 @@ class StudyController extends Controller
         } else {
             return redirect()->back();
         }
+    }
+
+    public function book() {
+        $books = Book::all();
+        return view('book',['books'=>$books]);
+    }
+
+    public function bookadd(Request $request) {
+        $book = Book::create([
+            'title' => $request->title,
+            'image' => $request->cover
+        ]);
+        return redirect('/book');
     }
 }
