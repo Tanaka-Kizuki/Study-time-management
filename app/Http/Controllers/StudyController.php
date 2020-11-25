@@ -78,7 +78,7 @@ class StudyController extends Controller
                     'memo' => $request->memo,
                     'status' => '勉強終了!!!'
                 ]);
-                return redirect()->back();
+                return redirect('/');
             }
         } else {
             return redirect('/');

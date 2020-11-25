@@ -21,13 +21,14 @@
                     @foreach($params as $param)
                     <li>
                          <p>{{$user->find($param->user_id)->name}}</p>
+                         <p>{{$param->status}}</p>
                          <p>{{$param->subject}}</p>
                          <p>開始時間：  {{$param->time_start}}</p>
                          <p>終了時間：  {{$param->time_finish}}</p>
                          @if($param->totaltime || $param->totaltime==0)
                          <p>学習時間：  {{$param->totaltime}}時間</p>
+                         <p>{{$param->memo}}</p>
                          @endif
-                         <p>{{$param->status}}</p>
                     </li>
                     @endforeach
                </ul>

@@ -24,7 +24,7 @@ Route::get('/','StudyController@index');
 Route::get('start/record','StudyController@startRecord');
 Route::get('/start','StudyController@start');
 Route::get('/finish/record','StudyController@finishRecord');
-Route::get('/finish','StudyController@start');
+Route::get('/finish','StudyController@finish');
 
 
 //書籍登録画面
