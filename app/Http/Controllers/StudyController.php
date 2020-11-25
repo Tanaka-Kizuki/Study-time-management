@@ -31,26 +31,28 @@ class StudyController extends Controller
             if($oldstudy->finish) {
                 $study = Study::create([
                     'user_id' => Auth::id(),
+                    'book_id' => $request->book_id,
                     'start' => $start,
                     'time_start'=> $start->format('H時i分'),
                     'status' => '勉強中',
                     'today' => $day,
                     'subject' => $request->subject
                 ]);
-                return redirect()->back();
+                return redirect('/');
             } else {
-                return redirect()->back();
+                return redirect('/');
             }
         } else {
             $study = Study::create([
                 'user_id' => Auth::id(),
+                'book_id' => $request->book_id,
                 'start' => $start,
                 'time_start'=> $start->format('H時i分'),
                 'status' => '勉強中',
                 'today' => $day,
                 'subject' => $request->subject,
             ]);
-            return redirect()->back();
+            return redirect('/');
         }
     }
 
@@ -74,7 +76,7 @@ class StudyController extends Controller
                 return redirect()->back();
             }
         } else {
-            return redirect()->back();
+            return redirect('/');
         }
     }
 

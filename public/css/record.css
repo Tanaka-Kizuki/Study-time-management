@@ -1,0 +1,23 @@
+input {
+     display: inline;
+}
+
+p {
+     display: inline;
+}
+
+img {
+     width: 100px;
+     height: 142px;
+}
+
+.box {
+     display: flex;
+     flex-wrap: wrap;
+     text-align: center;
+}
+
+.item {
+     width: 15%;
+     margin: 5px;
+}
