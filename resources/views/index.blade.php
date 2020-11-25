@@ -14,15 +14,14 @@
                <img class="logo" src="{{ asset('/img/logo.svg') }}" alt="logo">
           </div>
 
-          <a href="/record">START</a>
-          <a href="/finish">FINISH</a>
+          <a href="start/record">START</a>
+          <a href="/finish/record">FINISH</a>
           <div class="fusen">
                <ul>
                     @foreach($params as $param)
                     <li>
                          <p>{{$user->find($param->user_id)->name}}</p>
                          <p>{{$param->subject}}</p>
-                         <img src="">
                          <p>開始時間：  {{$param->time_start}}</p>
                          <p>終了時間：  {{$param->time_finish}}</p>
                          @if($param->totaltime || $param->totaltime==0)

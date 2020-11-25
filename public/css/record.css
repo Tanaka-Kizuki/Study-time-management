@@ -14,10 +14,13 @@ img {
 .box {
      display: flex;
      flex-wrap: wrap;
+     justify-content: left;
      text-align: center;
+     margin: 0 auto;
 }
 
 .item {
      width: 15%;
      margin: 5px;
+     padding: 10px;
 }

@@ -21,9 +21,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','StudyController@index');
 
 //学習登録画面
-Route::get('/record','StudyController@record');
+Route::get('start/record','StudyController@startRecord');
 Route::get('/start','StudyController@start');
-Route::get('/finish','StudyController@finish');
+Route::get('/finish/record','StudyController@finishRecord');
+Route::get('/finish','StudyController@start');
+
 
 //書籍登録画面
 Route::get('/book','StudyController@book');

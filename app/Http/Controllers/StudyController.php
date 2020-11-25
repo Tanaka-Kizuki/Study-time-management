@@ -16,7 +16,7 @@ class StudyController extends Controller
         return view('index',['params' => $params,'user' => $user]);
     }
 
-    public function record() {
+    public function startRecord() {
         $books = Book::all();
         return view('record',['books' => $books]);
     }
@@ -56,7 +56,11 @@ class StudyController extends Controller
         }
     }
 
-    public function finish() {
+    public function finishRecord() {
+        return view('finish');
+    }
+
+    public function finish(Request $request) {
         $oldstudy = Study::orderBy('id','desc')->first();
         $start = new Carbon($oldstudy->start);
         $finish = Carbon::now();
@@ -71,6 +75,7 @@ class StudyController extends Controller
                     'finish' => $finish,
                     'time_finish'=> $finish->format('H時i分'),
                     'totaltime' => $totalTimeHours,
+                    'memo' => $request->memo,
                     'status' => '勉強終了!!!'
                 ]);
                 return redirect()->back();
