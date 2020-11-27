@@ -19,7 +19,8 @@ class StudyController extends Controller
     }
 
     public function startRecord() {
-        $books = Book::all();
+        $user = Auth::user();
+        $books = Book::where('user_id',$user->id)->get();
         return view('record',['books' => $books]);
     }
 
