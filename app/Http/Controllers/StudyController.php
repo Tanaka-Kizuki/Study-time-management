@@ -6,12 +6,13 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Study;
 use App\Book;
+use App\User;
 use Auth;
 
 class StudyController extends Controller
 {
     public function index() {
-        $user = Auth::user();
+        $user = User::all();
         $params = Study::all();
         return view('index',['params' => $params,'user' => $user]);
     }
