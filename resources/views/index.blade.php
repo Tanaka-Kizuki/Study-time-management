@@ -30,6 +30,9 @@
                          <p>学習時間：  {{$param->totaltime}}時間</p>
                          <p>{{$param->memo}}</p>
                          @endif
+                         @if($param->book_id)
+                         <img src="{{$book->find($param->book_id)->image}}">
+                         @endif
                     </li>
                     @endforeach
                </ul>

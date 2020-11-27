@@ -12,7 +12,7 @@
                @csrf
                     <div class="box">
                          <div class="item">
-                              <input type="checkbox" value=0 name="book_id">書籍未選択
+                              <input type="checkbox" value="" name="book_id">書籍未選択
                               <input type="text" name="subject">
                          </div>
                          @foreach($books as $book)

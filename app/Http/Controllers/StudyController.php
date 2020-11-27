@@ -13,9 +13,10 @@ class StudyController extends Controller
 {
     public function index() {
         $user = User::all();
+        $book = Book::all();
         $params = Study::all();
         $login = Auth::user();
-        return view('index',['params' => $params,'user' => $user,'login' => $login]);
+        return view('index',['params' => $params,'user' => $user,'login' => $login,'book' => $book]);
     }
 
     public function startRecord() {
@@ -25,7 +26,11 @@ class StudyController extends Controller
     }
 
     public function start(Request $request) {
-        $subject = Book::where('id',$request->book_id)->first();
+        if($request->book_id) {
+            $subject = Book::where('id',$request->book_id)->first()->title;
+        } else {
+            $subject = $request->subject;
+        }
         $oldstudy = Study::orderBy('id','desc')->first();
         $start = Carbon::now();
         $day = $start ->format('Y年m月d日');
@@ -38,7 +43,7 @@ class StudyController extends Controller
                     'time_start'=> $start->format('H時i分'),
                     'status' => '勉強中',
                     'today' => $day,
-                    'subject' => $subject->title
+                    'subject' => $subject
                 ]);
                 return redirect('/');
             } else {
@@ -52,7 +57,7 @@ class StudyController extends Controller
                 'time_start'=> $start->format('H時i分'),
                 'status' => '勉強中',
                 'today' => $day,
-                'subject' => $subject->title,
+                'subject' => $subject,
             ]);
             return redirect('/');
         }
