@@ -19,7 +19,6 @@
                          <div class="item">
                               <div class="title">
                                    <input type="checkbox" value="{{$book->id}}" name="book_id">
-                                   <input type="hidden" name="subject" value="{{$book->title}}">
                                    <p>{{$book->title}}</p>
                               </div>
                               <img src="{{$book->image}}">

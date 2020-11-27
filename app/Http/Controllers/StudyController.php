@@ -24,11 +24,10 @@ class StudyController extends Controller
     }
 
     public function start(Request $request) {
+        $subject = Book::where('id',$request->book_id)->first();
         $oldstudy = Study::orderBy('id','desc')->first();
         $start = Carbon::now();
         $day = $start ->format('Y年m月d日');
-        // var_dump(Auth::id());
-        // exit();
         if($oldstudy) {
             if($oldstudy->finish) {
                 $study = Study::create([
@@ -38,7 +37,7 @@ class StudyController extends Controller
                     'time_start'=> $start->format('H時i分'),
                     'status' => '勉強中',
                     'today' => $day,
-                    'subject' => $request->subject
+                    'subject' => $subject->title
                 ]);
                 return redirect('/');
             } else {
@@ -52,7 +51,7 @@ class StudyController extends Controller
                 'time_start'=> $start->format('H時i分'),
                 'status' => '勉強中',
                 'today' => $day,
-                'subject' => $request->subject,
+                'subject' => $subject->title,
             ]);
             return redirect('/');
         }
