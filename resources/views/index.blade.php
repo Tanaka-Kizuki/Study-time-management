@@ -16,6 +16,7 @@
 
           <a href="start/record">START</a>
           <a href="/finish/record">FINISH</a>
+          <a href="/book?id={{$login->id}}">書籍登録</a>
           <div class="fusen">
                <ul>
                     @foreach($params as $param)

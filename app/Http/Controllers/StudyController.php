@@ -14,7 +14,8 @@ class StudyController extends Controller
     public function index() {
         $user = User::all();
         $params = Study::all();
-        return view('index',['params' => $params,'user' => $user]);
+        $login = Auth::user();
+        return view('index',['params' => $params,'user' => $user,'login' => $login]);
     }
 
     public function startRecord() {
@@ -86,16 +87,18 @@ class StudyController extends Controller
         }
     }
 
-    public function book() {
-        $books = Book::all();
+    public function book(Request $request) {
+        $books = Book::where('user_id',$request->id)->get();
         return view('book',['books'=>$books]);
     }
 
     public function bookadd(Request $request) {
+        $user = Auth::user();
         $book = Book::create([
+            'user_id' => $user->id,
             'title' => $request->title,
             'image' => $request->cover
         ]);
-        return redirect('/book');
+        return redirect('/');
     }
 }
