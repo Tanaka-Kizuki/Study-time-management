@@ -12,33 +12,41 @@
 
 <body>
      <div class="container">
-          <div class="logo">
-               <img class="logo" src="{{ asset('/img/logo.svg') }}" alt="logo">
+          <div class="top">
+               <div class="logo">
+                    <img class="logo" src="{{ asset('/img/logo.svg') }}" alt="logo">
+               </div>
+               <div class="content">
+                    <div class="content_inner">
+                         <div class="button_list">
+                              <a class="button_text" href="start/record">START</a>
+                              <a class="button_text" href="/finish/record">FINISH</a>
+                         </div>
+                         <div class="button_touroku">
+                              <a class="button_touroku_text" href="/book?id={{$login->id}}">書籍登録</a>
+                         </div>
+                    </div>
+               </div>
           </div>
 
-          <div class="button_list">
-               <a class="button_text" href="start/record">START</a>
-               <a class="button_text" href="/finish/record">FINISH</a>
-          </div>
-          <div class="button_touroku">
-               <a class="button_touroku_text" href="/book?id={{$login->id}}">書籍登録</a>
-          </div>
           <div class="fusen">
                <ul>
                     @foreach($params as $param)
                     <li>
-                         <p>{{$user->find($param->user_id)->name}}</p>
-                         <p>{{$param->status}}</p>
-                         <p>{{$param->subject}}</p>
-                         <p>開始時間： {{$param->time_start}}</p>
-                         <p>終了時間： {{$param->time_finish}}</p>
-                         @if($param->totaltime || $param->totaltime==0)
-                         <p>学習時間： {{$param->totaltime}}時間</p>
-                         <p>{{$param->memo}}</p>
-                         @endif
-                         @if($param->book_id)
-                         <img src="{{$book->find($param->book_id)->image}}">
-                         @endif
+                         <div class="image">
+                              @if($param->book_id)
+                              <img class="book_image" src="{{$book->find($param->book_id)->image}}">
+                              @endif
+                         </div>
+                         <div class="data">
+                              <p>{{$user->find($param->user_id)->name}}</p>
+                              <p>{{$param->status}}</p>
+                              <p>{{$param->subject}}</p>
+                              @if($param->totaltime || $param->totaltime==0)
+                              <p>学習時間： {{$param->totaltime}}時間</p>
+                              <p>{{$param->memo}}</p>
+                              @endif
+                         </div>
                     </li>
                     @endforeach
                </ul>

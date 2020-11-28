@@ -1,7 +1,20 @@
+/*＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+TOP 
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊*/
+.top {
+    display: flex;
+    justify-content: center;
+}
+
 .logo {
-    width: 500px;
-    height: 500px;
-    margin: 0 auto;
+    width: 350px;
+    height: 350px;
+    margin-right: 80px;
+}
+
+.content {
+    display: flex;
+    align-items: center;
 }
 
 .form {
@@ -26,12 +39,11 @@ ul {
 }
 
 .button_touroku {
-    margin: 10px auto 50px;
+    margin: 10px auto 0px;
     width: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 50px;
 }
 
 .button_text {
@@ -61,7 +73,9 @@ ul {
 }
 
 
-
+/*＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+学習記録 
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊*/
 .fusen {
     /* width:300px; */
     position: relative;
@@ -69,7 +83,8 @@ ul {
 }
 
 .fusen ul li {
-    width: 270px;
+    display: flex;
+    /* width: 270px; */
     font-size: 0.9em;
     margin: 1.6em 1em;
     padding: 1em;
@@ -97,4 +112,16 @@ ul {
     background: rgba(0, 0, 0, 0.5);
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
     transform: rotate(2deg);
+}
+
+.data {
+    text-align: center;
+    width: 117px;
+}
+
+.book_image {
+    width: 100px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #9c9c46;
 }
