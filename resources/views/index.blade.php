@@ -33,20 +33,26 @@
                <ul>
                     @foreach($params as $param)
                     <li>
-                         <div class="image">
-                              @if($param->book_id)
-                              <img class="book_image" src="{{$book->find($param->book_id)->image}}">
-                              @endif
+                         <p class="date">{{$param->today}}</p>
+                         <p class="name">{{$user->find($param->user_id)->name}}</p>
+                         <div class="list">
+                              <div class="image">
+                                   @if($param->book_id)
+                                   <img class="book_image" src="{{$book->find($param->book_id)->image}}">
+                                   @else
+                                   <img class="book_image" src="{{ asset('/img/noimagepng.png') }}">
+                                   @endif
+                              </div>
+                              <div class="data">
+                                   <div class="data_inner">
+                                        <p>{{$param->subject}}</p>
+                                        @if($param->totaltime || $param->totaltime==0)
+                                        <p><img class="clock" src="{{ asset('/img/clock.svg') }}" alt="clock"> {{$param->totaltime}}時間</p>
+                                        @endif
+                                   </div>
+                              </div>
                          </div>
-                         <div class="data">
-                              <p>{{$user->find($param->user_id)->name}}</p>
-                              <p>{{$param->status}}</p>
-                              <p>{{$param->subject}}</p>
-                              @if($param->totaltime || $param->totaltime==0)
-                              <p>学習時間： {{$param->totaltime}}時間</p>
-                              <p>{{$param->memo}}</p>
-                              @endif
-                         </div>
+                         <p>{{$param->memo}}</p>
                     </li>
                     @endforeach
                </ul>

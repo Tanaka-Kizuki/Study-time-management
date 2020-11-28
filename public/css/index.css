@@ -1,3 +1,7 @@
+p {
+    margin: 0px;
+}
+
 /*＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
 TOP 
 ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊*/
@@ -27,6 +31,7 @@ li {
 
 ul {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .button_list {
@@ -83,7 +88,6 @@ ul {
 }
 
 .fusen ul li {
-    display: flex;
     /* width: 270px; */
     font-size: 0.9em;
     margin: 1.6em 1em;
@@ -97,6 +101,7 @@ ul {
         #f1f1c1 13%,
         #ffffcc 16%
     );
+    text-align: center;
 }
 
 .fusen ul li::after {
@@ -114,14 +119,39 @@ ul {
     transform: rotate(2deg);
 }
 
+.list {
+    display: flex;
+}
+
+.date {
+    text-align: right;
+    font-size: 10px;
+    margin: 0px;
+}
+
+.name {
+    font-weight: bold;
+    margin-top: 0ox;
+}
+
 .data {
+    width: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.data_inner {
     text-align: center;
-    width: 117px;
+    margin: 0 auto;
 }
 
 .book_image {
-    width: 100px;
+    width: 110px;
     margin: 10px;
-    padding: 10px;
-    border: 1px solid #9c9c46;
+    padding: 5px 10px;
+    border: 1px solid #ebeb50;
+}
+
+.clock {
+    width: 15px;
 }
