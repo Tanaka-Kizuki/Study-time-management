@@ -9,18 +9,24 @@
      <meta name="csrf-token" content="{{csrf_token()}}">
 </head>
 <body>
-     <h1>書籍登録</h1>
-     <div id="app">
-        <booksearch-component></booksearch-component>
-     </div>
-     <h1>登録書籍</h1>
-     <div class="books">
-          @foreach($books as $book)
-          <div class="item">
-               <img src="{{$book->image}}">
-               <p>{{$book->title}}</p>
+     <div class="container">
+          <div class="inner_container">
+               <h1>書籍登録</h1>
+               <div id="app">
+               <booksearch-component></booksearch-component>
+               </div>
+               <div class="books">
+                    <h1>-本棚-</h1>
+                    <div class="item_box">
+                    @foreach($books as $book)
+                         <div class="item">
+                              <img src="{{$book->image}}">
+                              <p>{{$book->title}}</p>
+                         </div>
+                    @endforeach
+                    </div>
+               </div>
           </div>
-          @endforeach
      </div>
     <script src="{{ mix('js/app.js') }}" defer></script>
 </body>

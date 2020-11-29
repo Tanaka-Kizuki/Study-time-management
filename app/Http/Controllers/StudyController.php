@@ -104,6 +104,6 @@ class StudyController extends Controller
             'title' => $request->title,
             'image' => $request->cover
         ]);
-        return redirect('/');
+        return redirect()->back();
     }
 }

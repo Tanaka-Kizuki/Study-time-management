@@ -1922,12 +1922,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       isbn: '',
       title: '',
-      cover: ''
+      cover: '',
+      ok: false
     };
   },
   methods: {
@@ -1939,6 +1942,9 @@ __webpack_require__.r(__webpack_exports__);
         _this.title = res.data[0].summary.title;
         _this.cover = res.data[0].summary.cover;
       });
+    },
+    changeSwich: function changeSwich() {
+      this.ok = !this.ok;
     }
   }
 });
@@ -38223,7 +38229,12 @@ var render = function() {
           expression: "isbn"
         }
       ],
-      attrs: { type: "text" },
+      attrs: {
+        type: "text",
+        placeholder: "ISBNコードを入力",
+        pattern: "\\d{3}-\\d{1}-\\d{4}-\\d{4}-\\d{1}",
+        title: "●●●-○-◉◉◉◉-●●●●-○で入力"
+      },
       domProps: { value: _vm.isbn },
       on: {
         input: function($event) {
@@ -38235,25 +38246,58 @@ var render = function() {
       }
     }),
     _vm._v(" "),
-    _c("button", { on: { click: _vm.search } }, [_vm._v("検索")]),
+    _c(
+      "button",
+      {
+        on: {
+          click: function($event) {
+            _vm.search()
+            _vm.changeSwich()
+          }
+        }
+      },
+      [_vm._v("検索")]
+    ),
     _vm._v(" "),
-    _c("form", { attrs: { action: "/book/record" } }, [
-      _c("img", { attrs: { src: _vm.cover } }),
-      _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.title))]),
-      _vm._v(" "),
-      _c("input", {
-        attrs: { type: "hidden", name: "cover" },
-        domProps: { value: _vm.cover }
-      }),
-      _vm._v(" "),
-      _c("input", {
-        attrs: { type: "hidden", name: "title" },
-        domProps: { value: _vm.title }
-      }),
-      _vm._v(" "),
-      _c("button", [_vm._v("登録")])
-    ])
+    _c(
+      "div",
+      {
+        directives: [
+          { name: "show", rawName: "v-show", value: _vm.ok, expression: "ok" }
+        ],
+        staticClass: "form"
+      },
+      [
+        _c("form", { attrs: { action: "/book/record" } }, [
+          _c("img", { attrs: { src: _vm.cover } }),
+          _vm._v(" "),
+          _c("p", [_vm._v(_vm._s(_vm.title))]),
+          _vm._v(" "),
+          _c("input", {
+            attrs: { type: "hidden", name: "cover" },
+            domProps: { value: _vm.cover }
+          }),
+          _vm._v(" "),
+          _c("input", {
+            attrs: { type: "hidden", name: "title" },
+            domProps: { value: _vm.title }
+          }),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "entry",
+              on: {
+                click: function($event) {
+                  return _vm.changeSwitch()
+                }
+              }
+            },
+            [_vm._v("登録")]
+          )
+        ])
+      ]
+    )
   ])
 }
 var staticRenderFns = []

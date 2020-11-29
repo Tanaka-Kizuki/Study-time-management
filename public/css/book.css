@@ -1,15 +1,44 @@
 body {
      text-align: center;
+     background-color: #fff;
+}
+
+.container{
+     display: flex;
+     align-items: center;
+     padding: 30px;
+
+}
+
+.inner_container {
+     margin: 0 auto;
+}
+
+#app {
+     padding: 20px;
+     border-radius: 20px;
+     border: 2px solid rgb(177, 204, 252);
+}
+
+input {
+     width: 500px;
+}
+
+button {
+     display: block;
+     margin-top: 15px;
 }
 
 .books {
- display: flex;
- flex-wrap: wrap;
- justify-content: center;
+     margin-top: 20px;
+}
+
+.item_box {
+     display: flex;
 }
 
 .item {
-     width: 15%;
+     width: 25%;
      text-align: center;
      margin: 10px;
 }
@@ -17,5 +46,9 @@ body {
 .item img {
      width: 100px;
      height: 142px;
+     margin: 0 auto;
+}
+
+.entry {
      margin: 0 auto;
 }
