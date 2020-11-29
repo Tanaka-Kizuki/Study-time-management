@@ -22,7 +22,7 @@ class StudyController extends Controller
     public function startRecord() {
         $user = Auth::user();
         $books = Book::where('user_id',$user->id)->get();
-        return view('record',['books' => $books]);
+        return view('record',['books' => $books,'user' => $user]);
     }
 
     public function start(Request $request) {
@@ -94,7 +94,8 @@ class StudyController extends Controller
 
     public function book(Request $request) {
         $books = Book::where('user_id',$request->id)->get();
-        return view('book',['books'=>$books]);
+        $login = Auth::user();
+        return view('book',['books'=>$books,]);
     }
 
     public function bookadd(Request $request) {
