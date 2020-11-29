@@ -14,7 +14,7 @@ class StudyController extends Controller
     public function index() {
         $user = User::all();
         $book = Book::all();
-        $params = Study::all();
+        $params = Study::orderBy('id','desc')->get();
         $login = Auth::user();
         return view('index',['params' => $params,'user' => $user,'login' => $login,'book' => $book]);
     }
