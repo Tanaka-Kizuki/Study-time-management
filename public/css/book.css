@@ -27,6 +27,15 @@ input {
 button {
      display: block;
      margin-top: 15px;
+     background-color: rgb(177, 204, 252);
+     border: 0;
+     border-radius: 5px;
+     padding: 5px 10px;
+     color: rgb(255, 255, 255)
+}
+
+button:hover {
+     background-color: rgb(50, 125, 255);
 }
 
 .books {
@@ -51,4 +60,13 @@ button {
 
 .entry {
      margin: 0 auto;
+}
+
+.back {
+     background-color: rgb(177, 204, 252);
+     border: 0;
+     text-decoration: none;
+     border-radius: 5px;
+     padding: 5px 10px;
+     color: rgb(255, 255, 255);
 }

@@ -26,6 +26,7 @@
                     @endforeach
                     </div>
                </div>
+               <a href="/" class="back">戻る</a>
           </div>
      </div>
     <script src="{{ mix('js/app.js') }}" defer></script>
