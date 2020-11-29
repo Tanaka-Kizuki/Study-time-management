@@ -1,0 +1,25 @@
+button {
+     font-size: 18px;
+     display: block;
+     margin-top: 15px;
+     background-color: rgb(177, 204, 252);
+     border: 0;
+     border-radius: 20px;
+     padding: 15px 30px;
+     color: rgb(255, 255, 255);
+     margin: 20px auto;
+}
+
+h3 {
+     margin: 0px;
+}
+
+textarea {
+     width: 300px;
+     height: 100px;
+}
+
+.container {
+     text-align: center;
+     padding: 30px 0px;
+}
