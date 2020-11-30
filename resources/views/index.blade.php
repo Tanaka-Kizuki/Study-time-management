@@ -45,6 +45,9 @@
                               </div>
                               <div class="data">
                                    <div class="data_inner">
+                                        @if($param->status === "勉強中")
+                                        <p class="status">Studying Now</p>
+                                        @endif
                                         <p>{{$param->subject}}</p>
                                         @if($param->totaltime || $param->totaltime==0)
                                         <p><img class="clock" src="{{ asset('/img/clock.svg') }}" alt="clock"> {{$param->totaltime}}時間</p>

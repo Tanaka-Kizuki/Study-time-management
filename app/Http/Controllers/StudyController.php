@@ -45,9 +45,9 @@ class StudyController extends Controller
                     'today' => $day,
                     'subject' => $subject
                 ]);
-                return redirect('/');
+                return redirect('/home');
             } else {
-                return redirect('/');
+                return redirect('/home');
             }
         } else {
             $study = Study::create([
@@ -59,7 +59,7 @@ class StudyController extends Controller
                 'today' => $day,
                 'subject' => $subject,
             ]);
-            return redirect('/');
+            return redirect('/home');
         }
     }
 
@@ -85,10 +85,10 @@ class StudyController extends Controller
                     'memo' => $request->memo,
                     'status' => '勉強終了!!!'
                 ]);
-                return redirect('/');
+                return redirect('/home');
             }
         } else {
-            return redirect('/');
+            return redirect('/home');
         }
     }
 

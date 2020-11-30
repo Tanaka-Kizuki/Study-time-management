@@ -13,12 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 //ホーム
-Route::get('/','StudyController@index');
+// Route::get('/home','StudyController@index');
 
 //学習登録画面
 Route::get('start/record','StudyController@startRecord');

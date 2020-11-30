@@ -1,0 +1,32 @@
+.content {
+     position: absolute;
+     top: 40%;
+     left: 50%;
+     transform: translate(-50%,-50%);
+     text-align: center;
+}
+
+.title {
+     color: #fff;
+     margin-bottom: 50px;
+}
+
+.btn {
+     text-decoration: none;
+     padding: 15px 20px;
+     margin: 30px;
+     border: 3px solid rgb(158, 191, 247);
+     border-radius: 5px;
+     /* background-color: rgb(85, 140, 235); */
+     color: #fff;
+     font-weight: bold;
+}
+
+.login {
+     background-color: rgb(85, 140, 235);
+     border: 3px solid rgb(85, 140, 235);
+}
+
+.register {
+     border: 3px solid rgb(255, 255, 255);
+}
