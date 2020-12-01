@@ -16,10 +16,12 @@
     </head>
     <body>
         <div class="header">
-            <a class="header_logo" href="/home">study</a>
+            <a class="header_logo" href="/home">StudyShear</a>
             
             <nav class="header_left">
                 <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#">How</a></li>
                     @guest
                         <li>
                             <a href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -31,9 +33,9 @@
                         @endif
                     @else
                         <li>
-                            <a>
+                            <!-- <a>
                                 {{ Auth::user()->name }}
-                            </a>
+                            </a> -->
 
                             <div>
                                 <a href="{{ route('logout') }}"
@@ -49,9 +51,9 @@
                         </li>
                     @endguest
                 </ul>
-        </nav>
+            </nav>
         </div>
-        <div class="content">
+        <div class="contents">
             <h1 class="title">Study</h1>
             <a class="login btn" href="/login">Login</a>
             <a class="register btn" href="/register">Register</a>
