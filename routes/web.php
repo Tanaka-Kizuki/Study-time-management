@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 //ホーム
-// Route::get('/home','StudyController@index');
+Route::get('/home','StudyController@index');
 
 //学習登録画面
 Route::get('start/record','StudyController@startRecord');
@@ -33,4 +33,4 @@ Route::get('/book/record','StudyController@bookadd');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');

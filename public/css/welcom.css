@@ -1,14 +1,40 @@
+body {
+     background-size: cover;
+     padding: 0;
+     margin: 0;
+     font-family: "Nunito", sans-serif;
+}
+.header {
+     background-color: #fff;
+     display: flex;
+     justify-content: space-between;
+}
+
+.header_left ul {
+     display: flex;
+     justify-content: space-between;
+}
+
+.header_logo {
+     margin: 20px;
+}
+
+.header_left ul li {
+     list-style: none;
+}
+
 .content {
      position: absolute;
-     top: 40%;
+     top: 50%;
      left: 50%;
      transform: translate(-50%,-50%);
      text-align: center;
 }
 
 .title {
-     color: #fff;
+     color: rgb(51,102,153);
      margin-bottom: 50px;
+     font-size: 50px;
 }
 
 .btn {
@@ -27,6 +53,19 @@
      border: 3px solid rgb(85, 140, 235);
 }
 
+.login:hover {
+     border: 3px solid rgb(85, 140, 235);
+     background-color: transparent;
+     color: rgb(2, 26, 68);
+}
+
 .register {
-     border: 3px solid rgb(255, 255, 255);
+     border: 3px solid rgb(85, 140, 235);
+     color: rgb(2, 26, 68);
+}
+
+.register:hover {
+     background-color: rgb(85, 140, 235);
+     border: 3px solid rgb(85, 140, 235);
+     color: #fff;
 }
