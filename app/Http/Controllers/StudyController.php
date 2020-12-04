@@ -11,6 +11,12 @@ use Auth;
 
 class StudyController extends Controller
 {
+    
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index() {
         $user = User::all();
         $book = Book::all();
