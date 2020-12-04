@@ -4,10 +4,15 @@ namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
+use App\User;
+use Auth;
 
 class LoginTest extends TestCase
 {
+    use DatabaseMigrations;
     /**
      * A basic feature test example.
      *
@@ -15,18 +20,23 @@ class LoginTest extends TestCase
      */
     public function testExample()
     {
-        for($i=0;$i<100;$i++) {
-            factory(User::class)->create();
-        }
-        $count = User::get()->count();
-        $User = User::find(rand(1,$count));
-        $data = $User->toArray();
-        print_r($data);
-
-        $this->assertDatabaseHas('User',$data);
-
-        $User->delete();
-        $this->assertDataBaseMissing('User',$data);
-
+        $user = factory(User::class)->create([
+            'password'  => bcrypt('test1111')
+        ]);
+     
+        // 認証されないことを確認
+        $this->assertFalse(Auth::check());
+     
+        // ログインを実行
+        $response = $this->post('login', [
+            'email'    => $user->email,
+            'password' => 'test1111'
+        ]);
+     
+        // 認証されていることを確認
+        $this->assertTrue(Auth::check());
+     
+        // ログイン後にホームページにリダイレクトされるのを確認
+        $response->assertRedirect('home');
     }
 }
