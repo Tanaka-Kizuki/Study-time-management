@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\User;
@@ -14,6 +15,7 @@ class ViewsTest extends TestCase
      *
      * @return void
      */
+    use DatabaseMigrations;
     public function testExample()
     {
         $response = $this->get('/');
