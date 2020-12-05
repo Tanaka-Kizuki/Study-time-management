@@ -5,14 +5,12 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 use App\User;
 use Auth;
 
 class LoginTest extends TestCase
 {
-    use DatabaseMigrations;
     /**
      * A basic feature test example.
      *
