@@ -25,9 +25,11 @@ class ViewsTest extends TestCase
         
         $response = $this->get('/home');
         $response->assertViewIs('index');
+        $response->assertViewHas('params');
 
         $response = $this->get('/start/record');
         $response->assertViewIs('record');
+        $response->assertViewHas('books');
 
         $response = $this->get('/finish/record');
         $response->assertViewIs('finish');
