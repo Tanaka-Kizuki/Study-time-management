@@ -18,6 +18,10 @@ class ViewsTest extends TestCase
     use DatabaseMigrations;
     public function testExample()
     {
+        //
+        // 指定のviewファイルが表示されているかテスト
+        //
+
         $response = $this->get('/');
         $response->assertViewIs('welcome');
 

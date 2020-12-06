@@ -6,28 +6,23 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
-use App\Book;
-use App\Study;
 use App\User;
 
-class DatabaseTest extends TestCase
+class HomeTest extends TestCase
 {
     /**
      * A basic feature test example.
      *
      * @return void
      */
-
     use DatabaseMigrations;
-
-    //
-    //データベーステスト
-    //
-
     public function testExample()
     {
-        factory(Book::class,10)->create();
-        factory(User::class,10)->create();
-        factory(Study::class,10)->create();
+        $user = factory(User::class)->create();
+        $this->actingAs($user);
+
+        $this->get('/home')
+        ->click('start')
+        ->seePageIs('/start/record');
     }
 }

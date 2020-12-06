@@ -20,6 +20,11 @@ class LoginTest extends TestCase
     use DatabaseMigrations;
     public function testExample()
     {
+
+        //
+        //ログイン機能テスト
+        //
+
         $user = factory(User::class)->create([
             'password'  => bcrypt('test1111')
         ]);
