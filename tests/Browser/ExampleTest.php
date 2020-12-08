@@ -57,5 +57,22 @@ class ExampleTest extends DuskTestCase
                   ->assertSee('Laravel')
                   ->assertSee('Laravel Finish');
         });
+
+        //書籍登録が出来るかテスト
+        $this->browse(function ($first, $second) {
+            $user = factory(User::class)->create([
+                'email' => 'test2@laravel.com',
+                'password' => 'secret'
+            ]);
+
+            $first->loginAs(User::find(1))
+                  ->visit('/home')
+                  ->clickLink('書籍登録')
+                  ->assertPathIs('/book?id=1')
+                  ->type('isbn','978-4-7980-5907-5')
+                  ->press("検索")
+                  ->assertSee('PHPフレームワークLaravel実践開発');
+        });
+        
     }
 }

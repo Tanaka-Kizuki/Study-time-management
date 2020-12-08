@@ -38233,7 +38233,8 @@ var render = function() {
         type: "text",
         placeholder: "ISBNコードを入力",
         pattern: "\\d{3}-\\d{1}-\\d{4}-\\d{4}-\\d{1}",
-        title: "●●●-○-◉◉◉◉-●●●●-○で入力"
+        title: "●●●-○-◉◉◉◉-●●●●-○で入力",
+        name: "isbn"
       },
       domProps: { value: _vm.isbn },
       on: {

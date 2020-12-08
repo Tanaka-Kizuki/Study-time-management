@@ -1,6 +1,6 @@
 <template>
      <div class="book">
-          <input type="text" v-model="isbn" placeholder="ISBNコードを入力" pattern="\d{3}-\d{1}-\d{4}-\d{4}-\d{1}" title="●●●-○-◉◉◉◉-●●●●-○で入力">
+          <input type="text" v-model="isbn" placeholder="ISBNコードを入力" pattern="\d{3}-\d{1}-\d{4}-\d{4}-\d{1}" title="●●●-○-◉◉◉◉-●●●●-○で入力" name="isbn">
           <button v-on:click="search(); changeSwich()">検索</button>
           <div class="form" v-show="ok">
                <form action="/book/record">
