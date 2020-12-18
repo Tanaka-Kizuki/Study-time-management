@@ -31,6 +31,9 @@ Route::get('/finish','StudyController@finish');
 Route::get('/book','StudyController@book');
 Route::get('/book/record','StudyController@bookadd');
 
+//使い方ページ
+Route::get('/how','StudyController@howDo');
+
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');

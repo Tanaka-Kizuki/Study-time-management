@@ -12,10 +12,10 @@ use Auth;
 class StudyController extends Controller
 {
     
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     public function index() {
         $user = User::all();
@@ -23,6 +23,10 @@ class StudyController extends Controller
         $params = Study::orderBy('id','desc')->get();
         $login = Auth::user();
         return view('index',['params' => $params,'user' => $user,'login' => $login,'book' => $book]);
+    }
+
+    public function howDo() {
+        return view('how');
     }
 
     public function startRecord() {

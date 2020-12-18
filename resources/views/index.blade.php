@@ -17,7 +17,7 @@
           <nav class="header_left">
                <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="#">How</a></li>
+                    <li><a href="/how">How</a></li>
                     @guest
                         <li>
                             <a href="{{ route('login') }}">{{ __('Login') }}</a>

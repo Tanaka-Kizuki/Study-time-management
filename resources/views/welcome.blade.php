@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Laravel</title>
-        <script src="{{ asset('js/app.js') }}" defer></script>
+        <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('/css/welcom.css')}}">
@@ -21,7 +21,7 @@
             <nav class="header_left">
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="#">How</a></li>
+                    <li><a href="/how">How</a></li>
                     @guest
                         <li>
                             <a href="{{ route('login') }}">{{ __('Login') }}</a>
