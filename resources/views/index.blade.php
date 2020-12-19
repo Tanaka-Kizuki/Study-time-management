@@ -47,8 +47,8 @@
                         </li>
                     @endguest
                 </ul>
-            </nav>
-        </div>
+          </nav>
+     </div>
      <div class="container">
           <div class="top">
                <div class="logo">
