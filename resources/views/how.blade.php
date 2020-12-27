@@ -43,10 +43,10 @@
         </nav>
     </div>
     <div class="container">
-        <h1>使用方法</h1>
+        <h1>~使用方法~</h1>
         <ul>
             <li class="how_item">
-                <h2>1.使用教材の登録</h2>
+                <h2 class="title">1.使用教材の登録</h2>
                 <ul>
                     <li>
                         <p>①ホーム画面の書籍登録ボタンをクリック</p>
@@ -59,7 +59,7 @@
                 </ul>
             </li>
             <li class="how_item">
-                <h2>2.学習記録（開始）</h2>
+                <h2 class="title">2.学習記録（開始）</h2>
                 <ul>
                     <li>
                         <p>①ホーム画面STARTボタンをクリック</p>
@@ -72,7 +72,7 @@
                 </ul>
             </li>
             <li class="how_item">
-                <h2>2.学習記録（終了）</h2>
+                <h2 class="title">3.学習記録（終了）</h2>
                 <ul>
                     <li>
                         <p>①ホーム画面FINISHボタンをクリック</p>

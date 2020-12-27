@@ -1,0 +1,21 @@
+.container {
+     text-align: center;
+}
+
+.title {
+     font-size: 20px;
+     margin-bottom: 20px;
+}
+
+.how_item {
+     background-color: rgb(238, 246, 253);
+     margin-bottom: 10px;
+}
+
+.how_item li {
+     margin-bottom: 20px;
+}
+
+.how_item img {
+     width: 700px;
+}
