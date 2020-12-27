@@ -6,6 +6,7 @@
      <title>How</title>
      <link rel="stylesheet" href="{{ asset('/css/welcom.css')}}">
      <link rel="stylesheet" href="{{ asset('/css/index.css')}}">
+     <link rel="stylesheet" href="{{ asset('/css/how.css')}}">
 </head>
 <body>
     <div class="header">
