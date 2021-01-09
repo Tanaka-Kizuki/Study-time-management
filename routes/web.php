@@ -34,6 +34,13 @@ Route::get('/book/record','StudyController@bookadd');
 //使い方ページ
 Route::get('/how','StudyController@howDo');
 
+//いいね機能
+Route::get('/posts/{post?}/check', 'LikeController@check')->name('like.check');
+Route::get('/posts/{post?}/firstcheck', 'LikeController@firstcheck')->name('like.firstcheck');
+Route::resource('posts.likes', 'LikeController', [
+     'only' => ['store'],
+]);
+
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
