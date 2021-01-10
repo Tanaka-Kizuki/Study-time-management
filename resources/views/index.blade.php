@@ -9,6 +9,7 @@
      <link rel="stylesheet" href="{{ asset('/css/index.css')}}">
      <!-- <link href="{{ mix('/css/app.css') }}" rel="stylesheet" type="text/css">
     <meta name="csrf-token" content="{{csrf_token()}}"> -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -67,7 +68,7 @@
                </div>
           </div>
 
-          <div class="fusen">
+          <div class="fusen" id="app">
                <ul>
                     @foreach($params as $param)
                     <li>
@@ -89,6 +90,7 @@
                                         <p>{{$param->subject}}</p>
                                         @if($param->totaltime || $param->totaltime==0)
                                         <p><img class="clock" src="{{ asset('/img/clock.svg') }}" alt="clock"> {{$param->totaltime}}時間</p>
+                                        <like-component :post_id="{{$param->id}}"></like-component>
                                         @endif
                                    </div>
                               </div>
@@ -99,6 +101,7 @@
                </ul>
           </div>
      </div>
+     <script src="{{mix('js/app.js')}}"></script>
 </body>
 
 </html>
