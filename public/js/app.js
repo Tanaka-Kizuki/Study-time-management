@@ -2004,7 +2004,8 @@ __webpack_require__.r(__webpack_exports__);
   props: ['post_id'],
   data: function data() {
     return {
-      status: false
+      status: false,
+      count: 0
     };
   },
   created: function created() {
@@ -2018,12 +2019,14 @@ __webpack_require__.r(__webpack_exports__);
       var array = ["/posts/", id, "/firstcheck"];
       var path = array.join('');
       axios.get(path).then(function (res) {
-        if (res.data == 1) {
+        if (res.data[0] == 1) {
           console.log(res);
           _this.status = true;
+          _this.count = res.data[1];
         } else {
           console.log(res);
           _this.status = false;
+          _this.count = res.data[1];
         }
       })["catch"](function (err) {
         console.log(err);
@@ -2036,10 +2039,12 @@ __webpack_require__.r(__webpack_exports__);
       var array = ["/posts/", id, "/check"];
       var path = array.join('');
       axios.get(path).then(function (res) {
-        if (res.data == 1) {
+        if (res.data[0] == 1) {
           _this2.status = true;
+          _this2.count = res.data[1];
         } else {
           _this2.status = false;
+          _this2.count = res.data[1];
         }
       })["catch"](function (err) {
         console.log(err);
@@ -38450,7 +38455,10 @@ var render = function() {
               }
             }
           },
-          [_vm._v("Like")]
+          [
+            _vm._v("Like "),
+            _c("a", { attrs: { href: "#" } }, [_vm._v(_vm._s(_vm.count))])
+          ]
         )
       : _c(
           "button",
@@ -38464,7 +38472,10 @@ var render = function() {
               }
             }
           },
-          [_vm._v("Liked")]
+          [
+            _vm._v("Liked"),
+            _c("a", { attrs: { href: "#" } }, [_vm._v(_vm._s(_vm.count))])
+          ]
         )
   ])
 }

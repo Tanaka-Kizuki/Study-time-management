@@ -1,7 +1,7 @@
 <template>
  <div>
-  <button v-if="status == false" type="button" @click.prevent="like_check" class="btn btn-outline-warning">Like</button>
-   <button v-else type="button" @click.prevent="like_check" class="btn btn-warning">Liked</button>
+  <button v-if="status == false" type="button" @click.prevent="like_check" class="btn btn-outline-warning">Like <a href="#">{{count}}</a></button>
+   <button v-else type="button" @click.prevent="like_check" class="btn btn-warning">Liked<a href="#">{{count}}</a></button>
  </div>
 </template>
 
@@ -11,6 +11,7 @@ export default {
  data() {
    return {
      status: false,
+     count: 0,
    }
  },
  created() {
@@ -22,12 +23,14 @@ export default {
      const array = ["/posts/",id,"/firstcheck"];
      const path = array.join('')
      axios.get(path).then(res => {
-       if(res.data == 1) {
+       if(res.data[0] == 1) {
          console.log(res)
          this.status = true
+         this.count = res.data[1]
        } else {
          console.log(res)
          this.status = false
+         this.count = res.data[1]
        }
      }).catch(function(err) {
        console.log(err)
@@ -38,10 +41,12 @@ export default {
      const array = ["/posts/",id,"/check"];
      const path = array.join('')
      axios.get(path).then(res => {
-       if(res.data == 1) {
+       if(res.data[0] == 1) {
          this.status = true
+         this.count = res.data[1]
        } else {
          this.status = false
+         this.count = res.data[1]
        }
      }).catch(function(err) {
        console.log(err)
