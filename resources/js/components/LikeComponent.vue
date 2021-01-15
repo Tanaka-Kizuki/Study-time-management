@@ -1,7 +1,7 @@
 <template>
  <div>
-  <button v-if="status == false" type="button" @click.prevent="like_check" class="btn btn-outline-warning">Like <a href="#">{{count}}</a></button>
-   <button v-else type="button" @click.prevent="like_check" class="btn btn-warning">Liked<a href="#">{{count}}</a></button>
+  <button v-if="status == false" type="button" @click.prevent="like_check" class="btn btn-outline-warning">Like</button><a v-if="status == false" href="#">{{count}}</a>
+  <button v-else type="button" @click.prevent="like_check" class="btn btn-warning">Liked</button><a v-if="status == true" href="#">{{count}}</a>
  </div>
 </template>
 

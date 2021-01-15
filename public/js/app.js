@@ -38455,11 +38455,11 @@ var render = function() {
               }
             }
           },
-          [
-            _vm._v("Like "),
-            _c("a", { attrs: { href: "#" } }, [_vm._v(_vm._s(_vm.count))])
-          ]
+          [_vm._v("Like")]
         )
+      : _vm._e(),
+    _vm.status == false
+      ? _c("a", { attrs: { href: "#" } }, [_vm._v(_vm._s(_vm.count))])
       : _c(
           "button",
           {
@@ -38472,11 +38472,11 @@ var render = function() {
               }
             }
           },
-          [
-            _vm._v("Liked"),
-            _c("a", { attrs: { href: "#" } }, [_vm._v(_vm._s(_vm.count))])
-          ]
-        )
+          [_vm._v("Liked")]
+        ),
+    _vm.status == true
+      ? _c("a", { attrs: { href: "#" } }, [_vm._v(_vm._s(_vm.count))])
+      : _vm._e()
   ])
 }
 var staticRenderFns = []
