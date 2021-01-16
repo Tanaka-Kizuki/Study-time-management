@@ -42,4 +42,9 @@ class LikeController extends Controller {
                return [$like->like,$count];
           };
      }
+
+     public function like($post) {
+          $likes = new Like();
+          $like = $likes->where('post_id',$post)->where('like',1)->get();
+     }
 }

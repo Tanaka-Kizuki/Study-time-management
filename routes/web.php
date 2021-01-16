@@ -40,6 +40,7 @@ Route::get('/posts/{post?}/firstcheck', 'LikeController@firstcheck')->name('like
 Route::resource('posts.likes', 'LikeController', [
      'only' => ['store'],
 ]);
+Route::get('/posts/{post?}/like','LikeController@like');
 
 Auth::routes();
 

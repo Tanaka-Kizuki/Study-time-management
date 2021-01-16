@@ -2005,7 +2005,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       status: false,
-      count: 0
+      count: 0,
+      link: ''
     };
   },
   created: function created() {
@@ -2018,11 +2019,14 @@ __webpack_require__.r(__webpack_exports__);
       var id = this.post_id;
       var array = ["/posts/", id, "/firstcheck"];
       var path = array.join('');
+      var linkurl = ["/posts/", id, "/like"];
+      var link = linkurl.join('');
       axios.get(path).then(function (res) {
         if (res.data[0] == 1) {
-          console.log(res);
           _this.status = true;
           _this.count = res.data[1];
+          _this.link = link;
+          console.log(link);
         } else {
           console.log(res);
           _this.status = false;
@@ -38459,7 +38463,7 @@ var render = function() {
         )
       : _vm._e(),
     _vm.status == false
-      ? _c("a", { attrs: { href: "#" } }, [_vm._v(_vm._s(_vm.count))])
+      ? _c("a", { attrs: { href: _vm.link } }, [_vm._v(_vm._s(_vm.count))])
       : _c(
           "button",
           {
@@ -38475,7 +38479,7 @@ var render = function() {
           [_vm._v("Liked")]
         ),
     _vm.status == true
-      ? _c("a", { attrs: { href: "#" } }, [_vm._v(_vm._s(_vm.count))])
+      ? _c("a", { attrs: { href: _vm.link } }, [_vm._v(_vm._s(_vm.count))])
       : _vm._e()
   ])
 }
