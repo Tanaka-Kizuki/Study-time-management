@@ -2031,6 +2031,7 @@ __webpack_require__.r(__webpack_exports__);
           console.log(res);
           _this.status = false;
           _this.count = res.data[1];
+          _this.link = link;
         }
       })["catch"](function (err) {
         console.log(err);

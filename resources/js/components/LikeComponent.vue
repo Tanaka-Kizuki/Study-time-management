@@ -35,6 +35,7 @@ export default {
          console.log(res)
          this.status = false
          this.count = res.data[1]
+         this.link = link
        }
      }).catch(function(err) {
        console.log(err)

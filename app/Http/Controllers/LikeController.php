@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Like;
 use App\Study;
+use App\User;
 use Auth;
 
 class LikeController extends Controller {
@@ -45,6 +46,14 @@ class LikeController extends Controller {
 
      public function like($post) {
           $likes = new Like();
-          $like = $likes->where('post_id',$post)->where('like',1)->get();
+          $users = new User();
+          $like = $likes->where('posts_id',$post)->where('like',1)->get();
+          $param = [];
+          foreach($like as $data) {
+               $user = $users->where('id',$data->user_id)->first();
+               $param[] = $user;
+               return $param;
+          }
+          return view('like');
      }
 }
