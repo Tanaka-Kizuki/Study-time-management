@@ -52,8 +52,7 @@ class LikeController extends Controller {
           foreach($like as $data) {
                $user = $users->where('id',$data->user_id)->first();
                $param[] = $user;
-               return $param;
           }
-          return view('like');
+          return view('like',['param'=>$param]);
      }
 }

@@ -7,11 +7,12 @@
 </head>
 <body>
      <div>
-          @foreach($user as $users)
-               <ul>
-                    <li>{{$user->name}}</li>
-               </ul>
-          @endforeach
+          <h1>Liked</h1>
+          @if($param)
+               @for($i=0; count($param) > $i ;$i++)
+                    <h1>{{$param[$i]}}</h1>
+               @endfor
+          @endif
      </div>
 </body>
 </html>
