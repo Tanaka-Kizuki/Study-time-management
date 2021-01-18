@@ -30,10 +30,6 @@
                         @endif
                     @else
                         <li>
-                            <!-- <a>
-                                {{ Auth::user()->name }}
-                            </a> -->
-
                             <div>
                                 <a href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

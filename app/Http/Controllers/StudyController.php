@@ -17,7 +17,11 @@ class StudyController extends Controller
         $book = Book::all();
         $params = Study::orderBy('id','desc')->get();
         $login = Auth::user();
-        return view('index',['params' => $params,'user' => $user,'login' => $login,'book' => $book]);
+        if(Auth::check()) {
+            return view('index',['params' => $params,'user' => $user,'login' => $login,'book' => $book]);
+        }else {
+            return redirect('/');
+        };
     }
 
     public function howDo() {
