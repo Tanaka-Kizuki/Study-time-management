@@ -10,12 +10,16 @@
 </head>
 <body>
     <div class="header">
-        <a class="header_logo" href="/home">StudyShear</a>  
+        @guest
+            <a class="header_logo" href="/">StudyShear</a>  
+        @else
+        <a class="header_logo" href="/home">StudyShear</a>
+        @endguest
         <nav class="header_left">
             <ul>
-                <li><a href="/home">Home</a></li>
-                <li><a href="/how">How</a></li>
                 @guest
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/how">How</a></li>
                     <li>
                         <a href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
@@ -25,6 +29,8 @@
                     </li>
                     @endif
                 @else
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/how">How</a></li>
                     <li>
                         <div>
                             <a href="{{ route('logout') }}"

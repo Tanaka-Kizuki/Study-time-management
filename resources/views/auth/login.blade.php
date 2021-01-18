@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="header">
-        <a class="header_logo" href="/home">StudyShear</a>
+        <a class="header_logo" href="/">StudyShear</a>
 
         <nav class="header_left">
             <ul>
