@@ -1,0 +1,15 @@
+#user a p {
+     margin: 0px;
+     font-size: 15px;
+}
+
+#user{
+     padding: 2px 15px;
+     border-radius: 20px;
+
+}
+
+#user:hover {
+     background-color: #ffffff;
+     transition: 0.5s;
+}
