@@ -2646,11 +2646,11 @@ textarea.form-control.is-invalid {
   text-decoration: none;
 }
 
-.btn:focus,
+/* .btn:focus,
 .btn.focus {
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
-}
+} */
 
 .btn.disabled,
 .btn:disabled {
@@ -2840,20 +2840,16 @@ fieldset:disabled a.btn {
 
 .btn-warning:focus,
 .btn-warning.focus {
-  color: #212529;
-  background-color: #ffe924;
-  border-color: #ffe817;
-  box-shadow: 0 0 0 0.2rem rgba(222, 207, 69, 0.5);
+  color: #ff0000;
+  
 }
 
 .btn-warning.disabled,
 .btn-warning:disabled {
-  color: #212529;
-  background-color: #ffed4a;
-  border-color: #ffed4a;
+  color: #ff0000;
 }
 
-.btn-warning:not(:disabled):not(.disabled):active,
+/* .btn-warning:not(:disabled):not(.disabled):active,
 .btn-warning:not(:disabled):not(.disabled).active,
 .show > .btn-warning.dropdown-toggle {
   color: #212529;
@@ -2865,7 +2861,7 @@ fieldset:disabled a.btn {
 .btn-warning:not(:disabled):not(.disabled).active:focus,
 .show > .btn-warning.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(222, 207, 69, 0.5);
-}
+} */
 
 .btn-danger {
   color: #fff;
@@ -3135,15 +3131,14 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-warning {
-  color: #ffed4a;
-  border-color: #ffed4a;
+  color: #ff0000;
 }
 
 .btn-outline-warning:hover {
   color: #ff0000;
 }
 
-.btn-outline-warning:focus,
+/* .btn-outline-warning:focus,
 .btn-outline-warning.focus {
   box-shadow: 0 0 0 0.2rem rgba(255, 237, 74, 0.5);
 }
@@ -3152,9 +3147,9 @@ fieldset:disabled a.btn {
 .btn-outline-warning:disabled {
   color: #ffed4a;
   background-color: transparent;
-}
+} */
 
-.btn-outline-warning:not(:disabled):not(.disabled):active,
+/* .btn-outline-warning:not(:disabled):not(.disabled):active,
 .btn-outline-warning:not(:disabled):not(.disabled).active,
 .show > .btn-outline-warning.dropdown-toggle {
   color: #212529;
@@ -3166,7 +3161,7 @@ fieldset:disabled a.btn {
 .btn-outline-warning:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-warning.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(255, 237, 74, 0.5);
-}
+} */
 
 .btn-outline-danger {
   color: #e3342f;
