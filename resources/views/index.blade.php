@@ -6,10 +6,10 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Document</title>
      <link rel="stylesheet" href="{{ asset('/css/welcom.css')}}">
-     <link rel="stylesheet" href="{{ asset('/css/index.css')}}">
      <!-- <link href="{{ mix('/css/app.css') }}" rel="stylesheet" type="text/css">
     <meta name="csrf-token" content="{{csrf_token()}}"> -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('/css/index.css')}}">
     <link href="{{ asset('css/user.css') }}" rel="stylesheet">
 </head>
 
@@ -92,8 +92,7 @@
                                         @endif
                                         <p>{{$param->subject}}</p>
                                         @if($param->totaltime || $param->totaltime==0)
-                                        <p><img class="clock" src="{{ asset('/img/clock.svg') }}" alt="clock"> {{$param->totaltime}}時間</p>
-                                        <like-component :post_id="{{$param->id}}"></like-component>
+                                        <p><img class="clock" src="{{ asset('/img/clock.svg') }}" alt="clock"> {{$param->totaltime}}時間<like-component :post_id="{{$param->id}}"></like-component></p>
                                         @endif
                                    </div>
                               </div>

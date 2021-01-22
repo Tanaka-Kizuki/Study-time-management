@@ -169,3 +169,21 @@ ul {
 .clock {
     width: 15px;
 }
+
+.like_button {
+    display: inline-block;
+}
+
+.btn-outline-warning {
+    margin: 0px;
+    margin-left: 15px; 
+    color: #ff0000;
+    border: none;
+}
+
+.btn-warning {
+    margin: 0px;
+    margin-left: 15px; 
+    color: #ff0000;
+    border: none;
+}
