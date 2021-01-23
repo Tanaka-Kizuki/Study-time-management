@@ -44,7 +44,7 @@
                             </div>
                          </li>
                          <li id="user">
-                              <a>
+                              <a href="/user/{{Auth::user()->id}}">
                                 <p>{{Auth::user()->name}}</p>
                                 <p>{{Auth::user()->email}}</p>
                               </a>

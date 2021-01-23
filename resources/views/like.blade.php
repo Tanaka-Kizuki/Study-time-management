@@ -10,9 +10,10 @@
           <h1>Liked</h1>
           @if($param)
                @for($i=0; count($param) > $i ;$i++)
-                    <h1>{{$param[$i]}}</h1>
+                    <h1>{{$param[$i]->name}}</h1>
                @endfor
           @endif
+          <a href="/home">戻る</a>
      </div>
 </body>
 </html>

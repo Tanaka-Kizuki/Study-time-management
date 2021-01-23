@@ -13,3 +13,16 @@
      background-color: #ffffff;
      transition: 0.5s;
 }
+
+.container {
+     width: 80%;
+     margin: 0 auto;
+     text-align: center;
+     border: 1px solid #fcfcef;
+}
+
+.content {
+     display: flex;
+     justify-content: center;
+     border: 5px solid #fcfcef;
+}

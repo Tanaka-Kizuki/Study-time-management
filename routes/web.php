@@ -40,7 +40,10 @@ Route::get('/posts/{post?}/firstcheck', 'LikeController@firstcheck')->name('like
 Route::resource('posts.likes', 'LikeController', [
      'only' => ['store'],
 ]);
+//いいねしているユーザーの表示
 Route::get('/posts/{post?}/like','LikeController@like');
+
+Route::get('/user/{id?}','UserController@index');
 
 Auth::routes();
 
