@@ -1,21 +1,5 @@
-#user a p {
-     margin: 0px;
-     font-size: 15px;
-}
-
-#user{
-     padding: 2px 15px;
-     border-radius: 20px;
-
-}
-
-#user:hover {
-     background-color: #ffffff;
-     transition: 0.5s;
-}
-
 .container {
-     width: 80%;
+     width: 50%;
      margin: 0 auto;
      text-align: center;
      border: 1px solid #fcfcef;
@@ -23,6 +7,10 @@
 
 .content {
      display: flex;
-     justify-content: center;
-     border: 5px solid #fcfcef;
+     justify-content: flex-start;
+     border: 1px solid #ffcdfc;
+}
+
+.time {
+     display: block;
 }

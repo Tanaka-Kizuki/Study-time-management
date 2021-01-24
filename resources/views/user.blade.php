@@ -64,8 +64,9 @@
                          <img class="book_image" src="{{ asset('/img/noimagepng.png') }}">
                     @endif
                </div>
-               <div class="data">
-                    <li>{{$study->subject}}</li>
+               <div class="item">
+                    <p>{{$study->subject}}</p>
+                    <p class="time">{{$study->totaltime}}時間</p>
                </div>
           </div>
           @endforeach
