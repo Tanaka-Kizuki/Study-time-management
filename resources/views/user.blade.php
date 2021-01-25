@@ -54,6 +54,7 @@
      <div class="container">
           <p>{{$user->name}}</p>
           <p>{{$user->email}}</p>
+          
 
           @foreach($studies as $study)
           <div class="content">
