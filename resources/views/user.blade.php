@@ -52,10 +52,17 @@
           </nav>
      </div>
      <div class="container">
-          <p>{{$user->name}}</p>
-          <p>{{$user->email}}</p>
+          <div class="profile">
+               <div class="pro_img">
+                    <img src="{{ asset('/img/logo.svg') }}" class="pro_bg">
+                    <img src="{{ asset('/img/logo.svg') }}" class="pro_icon">
+               </div>
+               <div class="pro_content">
+                    <p>{{$user->name}}</p>
+                    <p>{{$user->email}}</p>
+               </div>
+          </div>
           
-
           @foreach($studies as $study)
           <div class="content">
                <div class="image">
