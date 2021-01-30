@@ -19,13 +19,21 @@ class UserController extends Controller
     }
 
     public function edit($id,Request $request) {
-        $image = $request->file('pro_img')->store('public/img');
-
+        $image = $request->file('pro_img')->store('public/image');
+        $icon = $request->file('pro_icon')->store('public/image');
         $image = str_replace('public/image/', '', $image);
+        $icon = str_replace('public/image/', '', $icon);
         $img = new Image;
-        $img->file_name = $image;
+        $img->img_name = $image;
+        $img->icon_name = $icon;
         $img->user_id = $id;
         $image->save();
+
+        $user = User::where('id',$id)->first();
+        $user->name = $request->name;
+        $user->coment = $request->coment;
+        $user->save();
+
         return redirect('/user/$id');
     }
 }

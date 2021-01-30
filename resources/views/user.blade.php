@@ -88,6 +88,9 @@
           <form action="edit/{{$user->id}}" method="post" enctype="multipart/form-data">
           @csrf
                <input type="file" name="pro_img">
+               <input type="file" name="pro_icon">
+               <input type="text" name="name" value="{{$user->name}}">
+               <input type="text" name="coment" value="{{$user->coment}}">
                <input type="submit" value="保存">
           </form>
      </div>
