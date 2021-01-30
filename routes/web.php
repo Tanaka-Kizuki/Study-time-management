@@ -44,6 +44,7 @@ Route::resource('posts.likes', 'LikeController', [
 Route::get('/posts/{post?}/like','LikeController@like');
 
 Route::get('/user/{id?}','UserController@index');
+Route::post('/user/edit/{id?}','UserController@edit');
 
 Auth::routes();
 

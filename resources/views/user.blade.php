@@ -57,9 +57,13 @@
                     <img src="{{ asset('/img/logo.svg') }}" class="pro_bg">
                     <img src="{{ asset('/img/logo.svg') }}" class="pro_icon">
                </div>
+               <div class="edit">
+                    <a href="edit/{{$user->id}}">プロフィールを編集する</a>
+               </div>
                <div class="pro_content">
                     <p>{{$user->name}}</p>
                     <p>{{$user->email}}</p>
+                    <p>{{$user->coment}}</p>
                </div>
           </div>
           
@@ -78,6 +82,14 @@
                </div>
           </div>
           @endforeach
+     </div>
+
+     <div>
+          <form action="edit/{{$user->id}}" method="post" enctype="multipart/form-data">
+          @csrf
+               <input type="file" name="pro_img">
+               <input type="submit" value="保存">
+          </form>
      </div>
      
 </body>
