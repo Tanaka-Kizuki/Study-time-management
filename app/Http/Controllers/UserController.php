@@ -21,15 +21,17 @@ class UserController extends Controller
     public function edit($id,Request $request) {
         if ($request->pro_img || $request->pro_icon) {
             $image = $request->file('pro_img')->store('public/image');
-            $icon = $request->file('pro_icon')->store('public/image');
             $image = str_replace('public/image/', '', $image);
-            $icon = str_replace('public/image/', '', $icon);
-            $img = new Image;
-            $img->img_name = $image;
-            $img->icon_name = $icon;
-            $img->user_id = $id;
-            $image->save();
         }
+        if ($request->pro_img || $request->pro_icon) {
+            $icon = $request->file('pro_icon')->store('public/image');
+            $icon = str_replace('public/image/', '', $icon);
+        }
+        $img = new Image;
+        $img->img_name = $image;
+        $img->icon_name = $icon;
+        $img->user_id = $id;
+        $image->save();
 
         $user = User::where('id',$id)->first();
         $user->name = $request->name;
