@@ -14,24 +14,25 @@ class UserController extends Controller
     public function index($id) {
         $user = Auth::user();
         $book = Book::all();
+        $image = Image::where('user_id',$id)->first();
         $studies = Study::where('user_id',$id)->get();
-        return view('user',['user'=>$user,'studies' =>$studies,'book'=>$book]);
+        return view('user',['user'=>$user,'studies' =>$studies,'book'=>$book,'image'=>$image]);
     }
 
     public function edit($id,Request $request) {
-        if ($request->pro_img || $request->pro_icon) {
+        $img = new Image;
+        if ($request->pro_img) {
             $image = $request->file('pro_img')->store('public/image');
             $image = str_replace('public/image/', '', $image);
+            $img->img_name = $image;
         }
-        if ($request->pro_img || $request->pro_icon) {
+        if ($request->pro_icon) {
             $icon = $request->file('pro_icon')->store('public/image');
             $icon = str_replace('public/image/', '', $icon);
+            $img->icon_name = $icon;
         }
-        $img = new Image;
-        $img->img_name = $image;
-        $img->icon_name = $icon;
         $img->user_id = $id;
-        $image->save();
+        $img->save();
 
         $user = User::where('id',$id)->first();
         $user->name = $request->name;

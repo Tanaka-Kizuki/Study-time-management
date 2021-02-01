@@ -54,7 +54,7 @@
      <div class="container">
           <div class="profile">
                <div class="pro_img">
-                    <img src="{{ asset('/img/logo.svg') }}" class="pro_bg">
+                    
                     <img src="{{ asset('/img/logo.svg') }}" class="pro_icon">
                </div>
                <div class="edit">
