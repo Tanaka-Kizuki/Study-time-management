@@ -15,12 +15,17 @@ class UserController extends Controller
         $user = Auth::user();
         $book = Book::all();
         $image = Image::where('user_id',$id)->first();
+        if(!$image) {
+            $image = new Image;
+            $image->user_id = $id;
+            $image->save();
+        }
         $studies = Study::where('user_id',$id)->get();
         return view('user',['user'=>$user,'studies' =>$studies,'book'=>$book,'image'=>$image]);
     }
 
     public function edit($id,Request $request) {
-        $img = new Image;
+        $img = Image::where('user_id',$id)->first();
         if ($request->pro_img) {
             $image = $request->file('pro_img')->store('public/image');
             $image = str_replace('public/image/', '', $image);
@@ -31,7 +36,6 @@ class UserController extends Controller
             $icon = str_replace('public/image/', '', $icon);
             $img->icon_name = $icon;
         }
-        $img->user_id = $id;
         $img->save();
 
         $user = User::where('id',$id)->first();
