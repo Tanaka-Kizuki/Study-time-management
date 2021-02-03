@@ -58,7 +58,7 @@
                     <img src="{{asset('storage/image/'.$image->icon_name)}}" class="pro_icon">
                </div>
                <div class="edit">
-                    <a href="edit/{{$user->id}}">プロフィールを編集する</a>
+                    <button id="edit_button">プロフィールを編集する</button>
                </div>
                <div class="pro_content">
                     <p>{{$user->name}}</p>
@@ -84,16 +84,21 @@
           @endforeach
      </div>
 
-     <div>
+     <div id="edit">
           <form action="edit/{{$user->id}}" method="post" enctype="multipart/form-data">
           @csrf
-               <input type="file" name="pro_img">
-               <input type="file" name="pro_icon">
-               <input type="text" name="name" value="{{$user->name}}">
-               <input type="text" name="coment" value="{{$user->coment}}">
+               <label for="edit_name">名前</label><input id="edit_name" type="text" name="name" value="{{$user->name}}">
+               <label for="edit_coment">自己紹介</label><input id="edit_coment" type="text" name="coment" value="{{$user->coment}}">
+               <label for="edit_coment">ホーム画像</label><input id="edit_img" type="file" name="pro_img" accept="image/*">
+               <img id="img_preview" class="pro_bg">
+               <label for="edit_coment">アイコン画像</label><input id="edit_icon" type="file" name="pro_icon" accept="image/*">
+               <img id="icon_preview">
                <input type="submit" value="保存">
           </form>
      </div>
-     
+
+     <div class="black_filter"></div>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="{{ asset('js/profile.js') }}"></script>
 </body>
 </html>

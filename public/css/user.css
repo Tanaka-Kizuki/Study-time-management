@@ -28,7 +28,6 @@
 .pro_bg {
      width: 100%;
      height: 200px;
-     padding-top: 30px;
      margin-bottom: 30px;
 }
 
@@ -44,11 +43,87 @@
 }
 
 .pro_content {
-     margin-top: 50px;
+     margin-top: 20px;
 }
 
 .profile p{
      text-align: left;
      padding-left: 20px;
      font-size: 20px;
+}
+
+button {
+     margin-left: 200px;
+     border-radius: 30px;
+     padding: 10px;
+     background-color: #ffffff;
+     border: 2px solid rgb(41, 98, 145);
+}
+
+button:hover {
+     background-color: #fdffff;
+     border: 2px solid rgb(0, 140, 255);
+}
+
+/* プロフィール編集画面 */
+#edit {
+     width: 500px;
+     margin: 10px auto;
+     background-color: #fffffff6;
+     display: none;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%,-50%);
+     z-index: 2;
+}
+
+#edit form input {
+     display: block;
+     margin: 10px auto;
+     outline: none;
+     border: none;
+}
+
+#edit form input:hover {
+     outline: auto;
+}
+
+#edit form label {
+     padding-left: 40px;
+     margin: 5px 0px 0px 0px;
+     font-weight: 900;
+}
+
+#edit.action {
+     display: block;
+     
+}
+
+#edit_coment {
+     width: 400px;
+}
+
+.black_filter.action {
+     position: absolute;
+     left: 0;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     background-color: black;
+     z-index: 1;
+     opacity:0.5;
+}
+
+#icon_preview {
+     width: 150px;
+     height: 150px;
+     border-radius: 100px;
+     border: 1px solid black;
+     display: block;
+     margin: 0px auto;
+}
+
+label {
+     font-weight: 900;
 }
