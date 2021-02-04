@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use App\Study;
 use App\Book;
 use App\User;
+use App\Image;
 use Auth;
 
 class StudyController extends Controller
@@ -17,6 +18,9 @@ class StudyController extends Controller
         $book = Book::all();
         $params = Study::orderBy('id','desc')->get();
         $login = Auth::user();
+        $image = new Image();
+        $image->user_id = $login->id;
+        $image->save();
         if(Auth::check()) {
             return view('index',['params' => $params,'user' => $user,'login' => $login,'book' => $book]);
         }else {

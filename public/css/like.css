@@ -27,9 +27,9 @@
      width: 50%;
      height: 75px;
      margin: 0 auto;
-     padding-bottom: 2px;
+     padding: 2px 0px;
      position: relative;
-     border-bottom: 3px solid black;
+     border-bottom: 2px solid black;
 }
 
 .pro_icon {
@@ -40,7 +40,7 @@
      border: 1px solid black;
      display: inline-block;
      position: absolute;
-     top: 0px;
+     top: 2px;
      left: 50px;
 }
 
