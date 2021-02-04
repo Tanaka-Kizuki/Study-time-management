@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Like;
 use App\Study;
 use App\User;
+use App\Image;
 use Auth;
 
 class LikeController extends Controller {
@@ -47,12 +48,16 @@ class LikeController extends Controller {
      public function like($post) {
           $likes = new Like();
           $users = new User();
+          $images = new Image();
           $like = $likes->where('posts_id',$post)->where('like',1)->get();
           $param = [];
+          $icon = [];
           foreach($like as $data) {
                $user = $users->where('id',$data->user_id)->first();
+               $image = $images->where('id',$data->user_id)->first();
                $param[] = $user;
+               $icon[] = $image;
           }
-          return view('like',['param'=>$param]);
+          return view('like',['param'=>$param,'icon'=>$icon]);
      }
 }
