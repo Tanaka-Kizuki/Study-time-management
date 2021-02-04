@@ -79,6 +79,7 @@
                <div class="item">
                     <p>{{$study->subject}}</p>
                     <p class="time">{{$study->totaltime}}時間</p>
+                    <p>{{$study->memo}}</p>
                </div>
           </div>
           @endforeach

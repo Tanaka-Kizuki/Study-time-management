@@ -6,14 +6,16 @@
 }
 
 .content {
-     display: flex;
-     justify-content: flex-start;
+     display: flex;;
+     justify-content:flex-start;
      border: 1px solid #ffcdfc;
      width: 500px;
      margin: 0 auto;
 }
 
-.time {
+.item {
+     text-align: left;
+     margin-left: 100px;
      display: block;
 }
 
@@ -102,6 +104,7 @@ button:hover {
 
 #edit_coment {
      width: 400px;
+     height: 50px;
 }
 
 .black_filter.action {
@@ -115,9 +118,16 @@ button:hover {
      opacity:0.5;
 }
 
+#img_preview {
+     width: 80%;
+     height: 200px;
+     display: block;
+     margin: 0 auto;
+}
+
 #icon_preview {
-     width: 150px;
-     height: 150px;
+     width: 75px;
+     height: 75px;
      border-radius: 100px;
      border: 1px solid black;
      display: block;
