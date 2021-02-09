@@ -140,6 +140,7 @@ ul {
 .name {
     font-weight: bold;
     margin-top: 0ox;
+    line-height: 30px;
 }
 
 .data {
@@ -209,4 +210,15 @@ ul {
 #user:hover {
     background-color: #ffffff;
     transition: 0.5s;
+}
+
+.user {
+    display: flex;
+}
+
+.pro_icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    margin-right: 20px;
 }

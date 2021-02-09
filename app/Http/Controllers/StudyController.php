@@ -18,13 +18,13 @@ class StudyController extends Controller
         $book = Book::all();
         $params = Study::orderBy('id','desc')->get();
         $login = Auth::user();
-        $image = Image::where('user_id',$login->id);
+        $image = new Image();
         if($image == NULL) {
             $image->user_id = $login->id;
             $image->save();
         }
         if(Auth::check()) {
-            return view('index',['params' => $params,'user' => $user,'login' => $login,'book' => $book]);
+            return view('index',['params' => $params,'user' => $user,'login' => $login,'book' => $book,'image'=>$image]);
         }else {
             return redirect('/');
         };

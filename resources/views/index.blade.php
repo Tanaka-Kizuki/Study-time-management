@@ -76,7 +76,10 @@
                     @foreach($params as $param)
                     <li>
                          <p class="date">{{$param->today}}</p>
-                         <p class="name">{{$user->find($param->user_id)->name}}</p>
+                         <div class="user">
+                              <img src="{{asset('storage/image/'.$image->find($param->user_id)->icon_name)}}" class="pro_icon">
+                              <p class="name">{{$user->find($param->user_id)->name}}</p>
+                         </div>
                          <div class="list">
                               <div class="image">
                                    @if($param->book_id)
