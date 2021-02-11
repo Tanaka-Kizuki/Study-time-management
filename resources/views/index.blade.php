@@ -44,9 +44,12 @@
                             </div>
                          </li>
                          <li id="user">
-                              <a href="/user/{{Auth::user()->id}}">
-                                <p>{{Auth::user()->name}}</p>
-                                <p>{{Auth::user()->email}}</p>
+                              <a  class ="user" href="/user/{{Auth::user()->id}}">
+                                   <img src="{{asset('storage/image/'.$image->find(Auth::user()->id)->icon_name)}}" class="pro_icon">
+                                   <div class="user_name">
+                                        <p>{{Auth::user()->name}}</p>
+                                        <p>{{Auth::user()->email}}</p>
+                                   </div>
                               </a>
                          </li> 
                     @endguest
