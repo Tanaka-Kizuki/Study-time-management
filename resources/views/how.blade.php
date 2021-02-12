@@ -11,7 +11,7 @@
 <body>
     <div class="header">
         @guest
-            <a class="header_logo" href="/">StudyShear</a>  
+            <a class="header_logo" href="/">StudyShear</a>
         @else
         <a class="header_logo" href="/home">StudyShear</a>
         @endguest

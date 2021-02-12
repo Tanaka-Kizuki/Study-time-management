@@ -17,7 +17,7 @@
     <body>
         <div class="header">
             <a class="header_logo" href="/home">StudyShear</a>
-            
+
             <nav class="header_left">
                 <ul>
                     <li><a href="/">Home</a></li>
@@ -58,6 +58,6 @@
             <a class="login btn" href="/login">Login</a>
             <a class="register btn" href="/register">Register</a>
         </div>
-        
+
     </body>
 </html>

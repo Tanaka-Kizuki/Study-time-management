@@ -15,7 +15,7 @@
 
 <body>
      <div class="header">
-          <a class="header_logo" href="/home">StudyShear</a>  
+          <a class="header_logo" href="/home">StudyShear</a>
           <nav class="header_left">
                <ul>
                     <li><a href="/home">Home</a></li>
@@ -51,7 +51,7 @@
                                         <p>{{Auth::user()->email}}</p>
                                    </div>
                               </a>
-                         </li> 
+                         </li>
                     @endguest
                 </ul>
           </nav>

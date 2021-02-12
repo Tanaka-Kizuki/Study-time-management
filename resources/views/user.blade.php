@@ -13,7 +13,7 @@
 </head>
 <body>
      <div class="header">
-          <a class="header_logo" href="/home">StudyShear</a>  
+          <a class="header_logo" href="/home">StudyShear</a>
           <nav class="header_left">
                <ul>
                     <li><a href="/home">Home</a></li>
@@ -46,7 +46,7 @@
                                 <p>{{Auth::user()->name}}</p>
                                 <p>{{Auth::user()->email}}</p>
                               </a>
-                         </li> 
+                         </li>
                     @endguest
                 </ul>
           </nav>
@@ -66,7 +66,7 @@
                     <p>{{$user->coment}}</p>
                </div>
           </div>
-          
+
           @foreach($studies as $study)
           <div class="content">
                <div class="image">
