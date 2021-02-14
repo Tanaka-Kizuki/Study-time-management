@@ -45,7 +45,6 @@
                          </li>
                          <li id="user">
                               <a  class ="user" href="/user/{{Auth::user()->id}}">
-                                   <img src="{{asset('storage/image/'.$image->find(Auth::user()->id)->icon_name)}}" class="pro_icon">
                                    <div class="user_name">
                                         <p>{{Auth::user()->name}}</p>
                                         <p>{{Auth::user()->email}}</p>
@@ -80,7 +79,6 @@
                     <li>
                          <p class="date">{{$param->today}}</p>
                          <div class="user">
-                              <img src="{{asset('storage/image/'.$image->find($param->user_id)->icon_name)}}" class="pro_icon">
                               <p class="name">{{$user->find($param->user_id)->name}}</p>
                          </div>
                          <div class="list">
