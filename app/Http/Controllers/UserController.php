@@ -8,6 +8,7 @@ use App\Study;
 use App\Book;
 use App\Image;
 use Auth;
+use Storage;
 
 class UserController extends Controller
 {
