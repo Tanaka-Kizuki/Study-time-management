@@ -35,7 +35,7 @@ class UserController extends Controller
         }
         if ($request->pro_icon) {
             $icon = $request->file('pro_icon');
-            $path = Storage::disk('s3')->putFile('image', $image, 'public');
+            $path = Storage::disk('s3')->putFile('image', $icon, 'public');
             $img->icon_name = Storage::disk('s3')->url($path);
             $img->save();
         }
