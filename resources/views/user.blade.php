@@ -54,8 +54,8 @@
      <div class="container">
           <div class="profile">
                <div class="pro_img">
-                    <img src="{{asset('storage/image/'.$image->img_name)}}" class="pro_bg">
-                    <img src="{{asset('storage/image/'.$image->icon_name)}}" class="pro_icon">
+                    <img src="{{$image->img_name}}" class="pro_bg">
+                    <img src="{{$image->icon_name}}" class="pro_icon">
                </div>
                <div class="edit">
                     <button id="edit_button">プロフィールを編集する</button>
