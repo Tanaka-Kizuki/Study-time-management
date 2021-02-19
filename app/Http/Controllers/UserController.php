@@ -28,14 +28,16 @@ class UserController extends Controller
     public function edit($id,Request $request) {
         $img = Image::where('user_id',$id)->first();
         if ($request->pro_img) {
-            $image = $request->file('pro_img')->store('public/image');
-            $image = str_replace('public/image/', '', $image);
-            $img->img_name = $image;
+            $image = $request->file('pro_img');
+            $path = Storage::disk('s3')->putFile('image', $image, 'public');
+            $img->img_name =  Storage::disk('s3')->url($path);
+            $img->save();
         }
         if ($request->pro_icon) {
-            $icon = $request->file('pro_icon')->store('public/image');
-            $icon = str_replace('public/image/', '', $icon);
-            $img->icon_name = $icon;
+            $icon = $request->file('pro_icon');
+            $path = Storage::disk('s3')->putFile('image', $image, 'public');
+            $img->icon_name = Storage::disk('s3')->url($path);
+            $img->save();
         }
         $img->save();
 
