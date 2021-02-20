@@ -18,7 +18,7 @@ class StudyController extends Controller
         $book = Book::all();
         $params = Study::orderBy('id','desc')->get();
         $login = Auth::user();
-        $image = new Image();
+        $image = Image::where('user_id',$login->id)->first();
         if($image == NULL) {
             $image->user_id = $login->id;
             $image->save();

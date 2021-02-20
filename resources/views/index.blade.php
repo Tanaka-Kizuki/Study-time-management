@@ -79,6 +79,11 @@
                     <li>
                          <p class="date">{{$param->today}}</p>
                          <div class="user">
+                              @if($image->icon_name=="noimagepng.png")
+                              <img src="{{ asset('/img/noimagepng.png') }}" class="pro_icon">
+                              @else
+                              <img src="{{$image->icon_name}}" class="pro_icon">
+                              @endif
                               <p class="name">{{$user->find($param->user_id)->name}}</p>
                          </div>
                          <div class="list">
