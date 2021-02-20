@@ -54,8 +54,17 @@
      <div class="container">
           <div class="profile">
                <div class="pro_img">
+                    @if($image->img_name=="noimagepng.png")
+                    <img src="{{ asset('/img/noimagepng.png') }}" class="pro_bg">
+                    @else
                     <img src="{{$image->img_name}}" class="pro_bg">
+                    @endif
+
+                    @if($image->icon_name=="noimagepng.png")
+                    <img src="{{ asset('/img/noimagepng.png') }}" class="pro_icon">
+                    @else
                     <img src="{{$image->icon_name}}" class="pro_icon">
+                    @endif
                </div>
                <div class="edit">
                     <button id="edit_button">プロフィールを編集する</button>
