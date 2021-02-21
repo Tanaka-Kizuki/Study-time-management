@@ -13,7 +13,11 @@
           @if($param)
                @for($i=0; count($param) > $i ;$i++)
                <div class="liked">
-                    <img src="{{asset('storage/image/'.$icon[$i]->icon_name)}}" class="pro_icon">
+                    @if($icon[$i]->icon_name=="noimagepng.png")
+                    <img src="{{ asset('/img/noimagepng.png') }}" class="pro_icon">
+                    @else
+                    <img src="{{$icon[$i]->icon_name}}" class="pro_icon">
+                    @endif
                     <div class="name">{{$param[$i]->name}}</div>
                </div>
                @endfor
