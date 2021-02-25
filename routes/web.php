@@ -48,4 +48,7 @@ Route::post('/user/edit/{id?}','UserController@edit');
 
 Auth::routes();
 
+# ゲストユーザーログイン
+Route::get('guest', 'Auth\LoginController@guestLogin')->name('login.guest');
+
 // Route::get('/home', 'HomeController@index')->name('home');
