@@ -57,6 +57,9 @@
             <h1 class="title">Study</h1>
             <a class="login btn" href="/login">Login</a>
             <a class="register btn" href="/register">Register</a>
+            <a href="{{ route('login.guest') }}" class="btn btn-default p-3">
+ ゲストログイン
+</a>
         </div>
 
     </body>
