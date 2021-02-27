@@ -20,6 +20,7 @@ class StudyController extends Controller
         $login = Auth::user();
         $image = Image::where('user_id',$login->id)->first();
         if($image == NULL) {
+            $image = new Image();
             $image->user_id = $login->id;
             $image->save();
         }
