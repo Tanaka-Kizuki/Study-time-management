@@ -44,7 +44,7 @@ class LoginController extends Controller
     //  ゲストログイン処理
       public function guestLogin()
      {
-        $GUEST_USER_ID = 1;
+        $GUEST_USER_ID = 4;
         Auth::loginUsingId($GUEST_USER_ID);
  
         return redirect('/home');
