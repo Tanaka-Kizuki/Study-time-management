@@ -14,7 +14,8 @@ class StudyController extends Controller
 {
 
     public function index() {
-        $user = User::all();
+        try{
+            $user = User::all();
         $book = Book::all();
         $params = Study::orderBy('id','desc')->get();
         $login = Auth::user();
@@ -29,6 +30,12 @@ class StudyController extends Controller
         }else {
             return redirect('/');
         };
+        } catch (\Exception $ex) {
+       echo "<pre>";
+       var_dump($ex->getMessage());
+       echo "</pre>";
+       exit();
+       }
     }
 
     public function howDo() {
