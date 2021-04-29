@@ -14,7 +14,6 @@
           <a class="header_logo" href="/home">StudyShear</a>
           <nav class="header_left">
                <ul>
-                    <li><a href="/home">Home</a></li>
                     <li><a href="/how">How</a></li>
                     @guest
                         <li>
@@ -55,12 +54,14 @@
           <div class="content">
                <div class="content_inner">
                     <div class="user">
-                         @if($image->find($data->user_id)->icon_name=="noimagepng.png")
-                         <img src="{{ asset('/img/noimagepng.png') }}" class="pro_icon">
-                         @else
-                         <img src="{{$image->find($data->user_id)->icon_name}}" class="pro_icon">
-                         @endif
-                         <p class="name">{{$user->find($data->user_id)->name}}</p>
+                         <div class="user_inner">
+                              @if($image->find($data->user_id)->icon_name=="noimagepng.png")
+                              <img src="{{ asset('/img/noimagepng.png') }}" class="pro_icon">
+                              @else
+                              <img src="{{$image->find($data->user_id)->icon_name}}" class="pro_icon">
+                              @endif
+                              <p class="name">{{$user->find($data->user_id)->name}}</p>
+                         </div>
                     </div>
                     <div class="list">
                          <div class="image">
