@@ -19,7 +19,6 @@
           <a class="header_logo" href="/home">StudyShear</a>
           <nav class="header_left">
                <ul>
-                    <li><a href="/home">Home</a></li>
                     <li><a href="/how">How</a></li>
                     @guest
                         <li>
