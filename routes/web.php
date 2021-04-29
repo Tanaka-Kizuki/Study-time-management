@@ -52,3 +52,7 @@ Auth::routes();
 Route::get('guest', 'Auth\LoginController@guestLogin')->name('login.guest');
 
 // Route::get('/home', 'HomeController@index')->name('home');
+
+
+//リプライ画面表示
+route::get('/reply/{id}','StudyController@reply');

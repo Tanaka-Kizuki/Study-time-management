@@ -138,4 +138,13 @@ class StudyController extends Controller
         ]);
         return redirect()->back();
     }
+
+    public function reply($id) {
+        $user = User::all();
+        $book = Book::all();
+        $login = Auth::user();
+        $image = Image::where('user_id', $login->id)->first();
+        $data = Study::find($id);
+        return view('reply',['data' => $data,'user' => $user, 'login' => $login, 'book' => $book, 'image' => $image]);
+    }
 }

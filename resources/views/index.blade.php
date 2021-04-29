@@ -10,6 +10,7 @@
     <meta name="csrf-token" content="{{csrf_token()}}"> -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('/css/index.css')}}">
+    <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
     <!-- <link href="{{ asset('css/user.css') }}" rel="stylesheet"> -->
 </head>
 
@@ -102,6 +103,7 @@
                                         <p>{{$param->subject}}</p>
                                         @if($param->totaltime || $param->totaltime==0)
                                         <p><img class="clock" src="{{ asset('/img/clock.svg') }}" alt="clock"> {{$param->totaltime}}時間<like-component :post_id="{{$param->id}}"></like-component></p>
+                                        <a href="/reply/{{$param->id}}"><i class="fas fa-reply"></i></a>
                                         @endif
                                    </div>
                               </div>
