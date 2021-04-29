@@ -56,3 +56,4 @@ Route::get('guest', 'Auth\LoginController@guestLogin')->name('login.guest');
 
 //リプライ画面表示
 route::get('/reply/{id}','StudyController@reply');
+route::post('/reply/add','StudyController@replyAdd');

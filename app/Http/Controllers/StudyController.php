@@ -6,6 +6,7 @@ use App\Book;
 use App\Image;
 use App\Study;
 use App\User;
+use App\Reply;
 use Auth;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -145,6 +146,16 @@ class StudyController extends Controller
         $login = Auth::user();
         $image = Image::where('user_id', $login->id)->first();
         $data = Study::find($id);
-        return view('reply',['data' => $data,'user' => $user, 'login' => $login, 'book' => $book, 'image' => $image]);
+        $replys = Reply::where('study_id',$id)->orderby('id','desc')->get();
+        return view('reply',['data' => $data,'user' => $user, 'login' => $login, 'book' => $book, 'image' => $image,'replys'=>$replys]);
+    }
+
+    public function replyAdd(Request $request) {
+        $reply = Reply::create([
+            'user_id' => $request->user_id,
+            'study_id' => $request->study_id,
+            'reply' => $request->reply
+        ]);
+        return redirect()->back();
     }
 }

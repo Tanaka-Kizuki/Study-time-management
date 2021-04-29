@@ -86,15 +86,29 @@
                <p>{{$data->memo}}</p>
           </div>
           <div class="form">
-               <form action="/reply/add">
+               <form action="/reply/add" method="post">
                @csrf
                     <i class="fas fa-reply"></i>
-                    <input type="text" id="reply">
+                    <input name="study_id" type="hidden" value="{{$data->id}}">
+                    <input name="user_id" type="hidden" value="{{$login->id}}">
+                    <input  name="reply" type="text" id="reply">
                     <input type="submit" value="返信">
                </form>
           </div>
           <div class="reply">
-
+               @foreach($replys as $reply)
+               <div class="user">
+                    @if($image->find($reply->user_id)->icon_name=="noimagepng.png")
+                    <img src="{{ asset('/img/noimagepng.png') }}" class="pro_icon">
+                    @else
+                    <img src="{{$image->find($reply->user_id)->icon_name}}" class="pro_icon">
+                    @endif
+                    <p class="name">{{$user->find($reply->user_id)->name}}</p>
+               </div>
+               <div class="coment">
+                    <p>{{$reply->reply}}</p>
+               </div>
+               @endforeach
           </div>
      </div>
 </body>
