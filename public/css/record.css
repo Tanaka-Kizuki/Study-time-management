@@ -1,67 +1,116 @@
 input {
-     display: inline;
+  display: inline;
+  width: 90%;
 }
 
 p {
-     display: inline;
+  display: block;
 }
 
 img {
-     width: 100px;
-     height: 142px;
+  width: 100px;
+  height: 142px;
 }
 
 textarea {
-     margin-top: 30px;
-     height: 30px;
+  margin-top: 30px;
+  height: 30px;
 }
 
 button {
-     font-size: 18px;
-     display: block;
-     margin-top: 15px;
-     background-color: rgb(177, 204, 252);
-     border: 0;
-     border-radius: 20px;
-     padding: 15px 30px;
-     color: rgb(255, 255, 255);
-     margin: 20px auto;
+  font-size: 18px;
+  display: block;
+  margin-top: 15px;
+  background-color: rgb(177, 204, 252);
+  border: 0;
+  border-radius: 20px;
+  padding: 15px 30px;
+  color: rgb(255, 255, 255);
+  margin: 20px auto;
 }
 
 button:hover {
-     background-color: rgb(50, 125, 255);
+  background-color: rgb(50, 125, 255);
 }
 
 .form {
-     padding: 30px 0px;
+  padding: 30px 0px;
 }
 
 .box {
-     display: flex;
-     flex-wrap: wrap;
-     justify-content: center;
-     text-align: center;
-     margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .item {
-     position: relative;
-     width: 12%;
-     margin: 5px;
-     padding: 8px;
-     border: 2px solid  rgb(177, 204, 252);
-     border-radius: 20px;
+  position: relative;
+  width: 12%;
+  margin: 5px;
+  padding: 8px;
+  border: 2px solid rgb(177, 204, 252);
+  border-radius: 20px;
 }
 
 .item_inner {
-     position: absolute;
-     top: 50%;
-     left: 50%;
-     transform: translate(-50%,-50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .plus {
-     margin-top: 30px;
+  margin-top: 30px;
+  width: 50px;
+  height: 50px;
+}
+
+@media (max-width: 900px) {
+  .container-sm,
+  .container {
+    max-width: 900px;
+  }
+  .item {
+       width: 33%;
+  }
+  .item p {
+       font-size: 10px;
+       margin: 5px;
+  }
+  .item_inner {
+       position: relative;
+  }
+  .plus {
+     margin-top: 10px;
      width: 50px;
      height: 50px;
+   }
+
+}
+
+@media (min-width: 960px) {
+  
+}
+
+@media (min-width: 1280px) {
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 960px;
+  }
+
+  .header_logo {
+    font-size: 40px;
+  }
+
+  .header_left ul li {
+    margin-right: 60px;
+  }
+
+  .btn {
+    display: inline-block;
+  }
 }

@@ -12,7 +12,8 @@
                @csrf
                <div class="box">
                     <div class="item">
-                         <input type="checkbox" value="" name="book_id" >書籍なしで勉強する
+                         <input type="checkbox" value="" name="book_id" >
+                         <p>書籍なしで勉強する</p>
                          <input type="text" name="subject" placeholder="勉強内容を記載">
                          <img src="{{ asset('/img/noimagepng.png') }}">
                     </div>
