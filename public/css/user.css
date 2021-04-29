@@ -1,156 +1,303 @@
 .container {
-     width: 50%;
-     margin: 0 auto;
-     text-align: center;
-     border: 1px solid #fcfcef;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid #fcfcef;
 }
 
 .content {
-     display: flex;;
-     justify-content:flex-start;
-     border: 1px solid #ffcdfc;
-     width: 500px;
-     margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  border: 1px solid #ffcdfc;
+  width: 500px;
+  margin: 0 auto;
 }
 
 .item {
-     text-align: left;
-     margin-left: 100px;
-     display: block;
+  text-align: left;
+  margin-left: 100px;
+  display: block;
 }
 
 .profile {
-     width: 500px;
-     margin: 0 auto;
-     padding-bottom: 30px;
-     position: relative;
-     border: 1px solid #ffcdfc;
+  width: 500px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  position: relative;
+  border: 1px solid #ffcdfc;
 }
 
 .pro_bg {
-     width: 100%;
-     height: 200px;
-     margin-bottom: 30px;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 30px;
 }
 
 .pro_icon {
-     width: 150px;
-     height: 150px;
-     border-radius: 100px;
-     border: 1px solid black;
-     position: absolute;
-     left: 20px;
-     top: 120px;
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  border: 1px solid black;
+  position: absolute;
+  left: 20px;
+  top: 120px;
 }
 
 .pro_content {
-     margin-top: 20px;
-     display:flex
+  margin-top: 20px;
+  display: flex;
 }
 
-.profile p{
-     text-align: left;
-     padding-left: 20px;
-     font-size: 20px;
+.profile p {
+  text-align: left;
+  padding-left: 20px;
+  font-size: 20px;
 }
 
 button {
-     width: 200px;
-     margin-left: 150px;
-     border-radius: 30px;
-     padding: 10px;
-     background-color: #ffffff;
-     border: 2px solid rgb(41, 98, 145);
+  width: 200px;
+  margin-left: 150px;
+  border-radius: 30px;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 2px solid rgb(41, 98, 145);
 }
 
 button:hover {
-     background-color: #fdffff;
-     border: 2px solid rgb(0, 140, 255);
+  background-color: #fdffff;
+  border: 2px solid rgb(0, 140, 255);
 }
 
 /* プロフィール編集画面 */
 #edit {
-     width: 500px;
-     margin: 10px auto;
-     background-color: #fffffff6;
-     display: none;
-     position: absolute;
-     top: 50%;
-     left: 50%;
-     transform: translate(-50%,-50%);
-     z-index: 2;
+  width: 500px;
+  margin: 10px auto;
+  background-color: #fffffff6;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
 }
 
 #edit form input {
-     display: block;
-     margin: 10px auto;
-     outline: none;
-     border: none;
+  display: block;
+  margin: 10px auto;
+  outline: none;
+  border: none;
 }
 
 #edit form input:hover {
-     outline: auto;
+  outline: auto;
 }
 
 #edit form label {
-     padding-left: 40px;
-     margin: 5px 0px 0px 0px;
-     font-weight: 900;
+  padding-left: 40px;
+  margin: 5px 0px 0px 0px;
+  font-weight: 900;
 }
 
 #edit.action {
-     display: block;
-     
+  display: block;
 }
 
 #edit_coment {
-     width: 400px;
-     height: 50px;
+  width: 400px;
+  height: 50px;
 }
 
 .black_filter.action {
-     position: absolute;
-     left: 0;
-     top: 0;
-     width: 100%;
-     height: 100%;
-     background-color: black;
-     z-index: 1;
-     opacity:0.5;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1;
+  opacity: 0.5;
 }
 
 #img_preview {
-     width: 80%;
-     height: 200px;
-     display: block;
-     margin: 0 auto;
+  width: 80%;
+  height: 200px;
+  display: block;
+  margin: 0 auto;
 }
 
 #icon_preview {
-     width: 75px;
-     height: 75px;
-     border-radius: 100px;
-     border: 1px solid black;
-     display: block;
-     margin: 0px auto;
+  width: 75px;
+  height: 75px;
+  border-radius: 100px;
+  border: 1px solid black;
+  display: block;
+  margin: 0px auto;
 }
 
 label {
-     font-weight: 900;
+  font-weight: 900;
 }
 
 #record_button {
-     margin-top: 20px;
-     margin-left: 70px;
-     margin-right: 10px;
+  margin-top: 20px;
+  margin-left: 70px;
+  margin-right: 10px;
 }
 
 #record {
-     display: inline-block;
-     width: 100%;
-     text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
 }
 
 #title {
-     margin-top: 30px;
+  margin-top: 30px;
+}
+
+@media (max-width: 960px) {
+  .container {
+    max-width: 960px;
+    width: 90%;
+  }
+  .profile {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .pro_bg {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 30px;
+  }
+  .pro_icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+  }
+
+  .pro_content {
+    margin-top: 20px;
+    display: flex;
+  }
+
+  .profile p {
+    text-align: left;
+    padding-left: 20px;
+    font-size: 20px;
+  }
+
+  button {
+    width: 200px;
+    margin-left: 150px;
+    border-radius: 30px;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 2px solid rgb(41, 98, 145);
+  }
+
+  button:hover {
+    background-color: #fdffff;
+    border: 2px solid rgb(0, 140, 255);
+  }
+
+  button {
+    width: 100px;
+    margin-left: 100px;
+    border-radius: 30px;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 2px solid rgb(41, 98, 145);
+  }
+
+  #record_button {
+    width: 100px;
+    margin-left: 150px;
+    border-radius: 30px;
+    padding: 10px;
+    margin-top: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  #record {
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+  }
+
+  #title {
+    margin-top: 30px;
+  }
+
+  .users p {
+    font-size: 16px;
+  }
+  .content {
+    display: flex;
+    justify-content: flex-start;
+    border: 1px solid #ffcdfc;
+    width: 100%;
+    margin: 0px;
+  }
+
+  .item {
+    text-align: left;
+    margin-left: 30px;
+    display: block;
+  }
+
+  #edit {
+    width: 80%;
+    margin: 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  #edit form input {
+    margin: 10px auto;
+  }
+
+  #edit_coment {
+    width: 80%;
+    height: 50px;
+  }
+
+  #edit_img,#edit_icon {
+       width: 80%;
+
+  }
+
+  .black_filter.action {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1;
+    opacity: 0.5;
+  }
+
+  #img_preview {
+    width: 80%;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  #icon_preview {
+    width: 75px;
+    height: 75px;
+    border-radius: 100px;
+    border: 1px solid black;
+    display: block;
+    margin: 0px auto;
+  }
+
+  label {
+    font-weight: 900;
+  }
 }

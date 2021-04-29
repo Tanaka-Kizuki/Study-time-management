@@ -8,6 +8,7 @@
      <link href="{{ asset('css/app.css') }}" rel="stylesheet">
      <link rel="stylesheet" href="{{ asset('/css/welcom.css')}}">
      <link href="{{ asset('css/user.css') }}" rel="stylesheet">
+     <link href="{{ asset('css/chart.css') }}" rel="stylesheet">
      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 </head>
 <body>
@@ -15,7 +16,6 @@
           <a class="header_logo" href="/home">StudyShear</a>
           <nav class="header_left">
                <ul>
-                    <li><a href="/home">Home</a></li>
                     <li><a href="/how">How</a></li>
                      @guest
                     <li>

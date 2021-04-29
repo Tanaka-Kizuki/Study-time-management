@@ -1,0 +1,15 @@
+p ,.header_left ul li a {
+     font-size: 18px;
+     margin-bottom: 5px;
+}
+
+.container {
+     width: 70%;
+     max-width: 80%;
+}
+
+@media (max-width: 960px) {
+     p ,.header_left ul li a {
+          font-size: 12px;
+     }
+}

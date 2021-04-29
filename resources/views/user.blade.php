@@ -16,7 +16,6 @@
           <a class="header_logo" href="/home">StudyShear</a>
           <nav class="header_left">
                <ul>
-                    <li><a href="/home">Home</a></li>
                     <li><a href="/how">How</a></li>
                     @guest
                         <li>
@@ -67,7 +66,7 @@
                     @endif
                </div>
                <div class="edit">
-                    <button id="edit_button">プロフィールを編集する</button>
+                    <button id="edit_button">編集する</button>
                </div>
                <div class="pro_content">
                     <div class="users">
