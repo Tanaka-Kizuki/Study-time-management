@@ -21,7 +21,7 @@ class UserController extends Controller
             $image->user_id = $id;
             $image->save();
         }
-        $studies = Study::where('user_id',$id)->get();
+        $studies = Study::where('user_id',$id)->orderby('id','desc')->get();
         return view('user',['user'=>$user,'studies' =>$studies,'book'=>$book,'image'=>$image]);
     }
 
@@ -50,6 +50,18 @@ class UserController extends Controller
     }
 
     public function chart() {
-        return view('chart');
+        $id = Auth::id();
+        $studies = Study::where('user_id',$id)->get();
+        $time = [];
+        $lavel = [];
+        $total = 0;
+        $totalTime = [];
+        foreach($studies as $study) {
+            $time[] = $study->totaltime;
+            $lavel[] = $study->today;
+            $total += $study->totaltime;
+            $totalTime[] = $total;
+        }
+        return view('chart',['lavel' => $lavel,'time' => $time,'totalTime' => $totalTime]);
     }
 }

@@ -70,9 +70,12 @@
                     <button id="edit_button">プロフィールを編集する</button>
                </div>
                <div class="pro_content">
-                    <p>{{$user->name}}</p>
-                    <p>{{$user->email}}</p>
-                    <p>{{$user->coment}}</p>
+                    <div class="users">
+                         <p>{{$user->name}}</p>
+                         <p>{{$user->email}}</p>
+                         <p>{{$user->coment}}</p>
+                    </div>
+                    <button id="record_button"><a href="/chart" id="record">学習記録</a></button>
                </div>
           </div>
 
