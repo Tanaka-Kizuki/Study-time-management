@@ -52,6 +52,14 @@
      </div>
      <div class="container">
           <h1 id="title">学習記録</h1>
+          <div class="search">
+               <form action="/chart">
+               @csrf
+                    <input type="date" name="start">　〜　
+                    <input type="date" name="finish">
+                    <input type="submit" value="検索">
+               </form>
+          </div>
           <canvas id="myChart"></canvas>
      </div>
      <script>

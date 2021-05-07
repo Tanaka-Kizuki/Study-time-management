@@ -49,9 +49,19 @@ class UserController extends Controller
         return redirect()->back();
     }
 
-    public function chart() {
+    public function chart(Request $request) {
         $id = Auth::id();
-        $studies = Study::where('user_id',$id)->get();
+        if($request->start || $request->finish) {
+            if($request->start && $request->finish) {
+                $studies = Study::whereBetween('start',[$request->start,$request->finish])->orwhere('start','like',"%{$request->finish}%")->where('user_id',$id)->get();
+            } elseif($request->start) {
+                $studies = Study::where('start','like',"%{$request->start}%")->where('user_id',$id)->get();
+            } else {
+                $studies = Study::where('start','like',"%{$request->finish}%")->where('user_id',$id)->get();
+            }
+        } else {
+            $studies = Study::where('user_id',$id)->get();
+        }
         $time = [];
         $lavel = [];
         $total = 0;
