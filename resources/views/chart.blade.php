@@ -53,10 +53,10 @@
      <div class="container">
           <h1 id="title">学習記録</h1>
           <div class="search">
-               <form action="/chart">
+               <form action="/chart" method="post">
                @csrf
-                    <input type="date" name="start">　〜　
-                    <input type="date" name="finish">
+                    <input type="date" name="start" value="{{ $start }}"> ~ 
+                    <input type="date" name="finish" value="{{ $finish }}">
                     <input type="submit" value="検索">
                </form>
           </div>

@@ -51,13 +51,15 @@ class UserController extends Controller
 
     public function chart(Request $request) {
         $id = Auth::id();
-        if($request->start || $request->finish) {
-            if($request->start && $request->finish) {
-                $studies = Study::whereBetween('start',[$request->start,$request->finish])->orwhere('start','like',"%{$request->finish}%")->where('user_id',$id)->get();
-            } elseif($request->start) {
-                $studies = Study::where('start','like',"%{$request->start}%")->where('user_id',$id)->get();
+        $start = $request->start;
+        $finish = $request->finish;
+        if($start || $finish) {
+            if($start && $finish) {
+                $studies = Study::whereBetween('start',[$start,$finish])->orwhere('start','like',"%{$finish}%")->where('user_id',$id)->get();
+            } elseif($start) {
+                $studies = Study::where('start','like',"%{$start}%")->where('user_id',$id)->get();
             } else {
-                $studies = Study::where('start','like',"%{$request->finish}%")->where('user_id',$id)->get();
+                $studies = Study::where('start','like',"%{$finish}%")->where('user_id',$id)->get();
             }
         } else {
             $studies = Study::where('user_id',$id)->get();
@@ -72,6 +74,6 @@ class UserController extends Controller
             $total += $study->totaltime;
             $totalTime[] = $total;
         }
-        return view('chart',['lavel' => $lavel,'time' => $time,'totalTime' => $totalTime]);
+        return view('chart',['lavel' => $lavel,'time' => $time,'totalTime' => $totalTime,'start'=>$start,'finish'=>$finish]);
     }
 }

@@ -60,3 +60,4 @@ route::post('/reply/add','StudyController@replyAdd');
 
 //チャート
 Route::get('/chart','UserController@chart');
+Route::post('/chart','UserController@chart');
