@@ -57,9 +57,11 @@ class UserController extends Controller
             if($start && $finish) {
                 $studies = Study::whereBetween('start',[$start,$finish])->orwhere('start','like',"%{$finish}%")->where('user_id',$id)->get();
             } elseif($start) {
-                $studies = Study::where('start','like',"%{$start}%")->where('user_id',$id)->get();
+                $studies = Study::whereBetween('start',[$start,'2222-12-31'])->where('user_id',$id)->get();
+                // $studies = Study::where('start','like',"%{$start}%")->where('user_id',$id)->get();
             } else {
-                $studies = Study::where('start','like',"%{$finish}%")->where('user_id',$id)->get();
+                $studies = Study::whereBetween('start',['2000-01-01',$finish])->where('user_id',$id)->orwhere('start','like',"%{$finish}%")->get();
+                // $studies = Study::where('start','like',"%{$finish}%")->where('user_id',$id)->get();
             }
         } else {
             $studies = Study::where('user_id',$id)->get();
